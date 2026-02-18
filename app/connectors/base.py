@@ -1,9 +1,8 @@
-
 from abc import ABC, abstractmethod
 from typing import List, Dict, Any
 
 class BaseConnector(ABC):
 
     @abstractmethod
-    def fetch(self, **kwargs) -> List[Dict[str, Any]]:
+    def get_data(self, params: dict) -> List[Dict[str, Any]]:
         pass
