@@ -3,7 +3,7 @@ from fastapi import APIRouter, Query
 from app.connectors.crm_connector import CRMConnector
 from app.connectors.support_connector import SupportConnector
 from app.connectors.analytics_connector import AnalyticsConnector
-from app.services.business_rules import apply_voice_limits
+from app.services.business_rules import apply_voice_limits, apply_rules
 from app.services.voice_optimizer import summarize_if_large
 from app.services.data_identifier import identify_data_type
 from app.models.common import DataResponse, Metadata
@@ -42,7 +42,7 @@ def get_data(source: str, limit: int = Query(10)):
     return DataResponse(data=optimized, metadata=metadata)
 
 
-@router.get("/data/crm/customers")
+@router.get("/data/crm/customers", response_model=DataResponse)
 def get_crm_customers(
     customer_id: Optional[str] = Query(None, description="Filter by customer_id (acme_corp, beta_inc, gamma_ltd)"),
     top: int = Query(10, description="Number of top customers to return"),
@@ -50,22 +50,14 @@ def get_crm_customers(
 ):
     connector = CRMConnector()
     
-    # Get all customers first to calculate total
-    all_customers = connector.get_data({"customer_id": None, "top": None, "period": "all"})
-    total = len(all_customers)
+    # Get all raw data (no filtering)
+    raw_data = connector.get_data({"customer_id": None, "top": None, "period": "all"})
     
-    # Get filtered customers
+    # Apply business rules
     params = {
         "customer_id": customer_id,
         "top": top,
         "period": period
     }
-    filtered_customers = connector.get_data(params)
     
-    return {
-        "data": filtered_customers,
-        "metadata": {
-            "total": total,
-            "returned": len(filtered_customers)
-        }
-    }
+    return apply_rules("crm", raw_data, params)
