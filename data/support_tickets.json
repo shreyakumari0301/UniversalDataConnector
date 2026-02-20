@@ -1,402 +1,802 @@
 [
   {
-    "ticket_id": 1,
-    "customer_id": 16,
-    "subject": "Issue 1",
-    "priority": "high",
-    "created_at": "2026-01-30T03:46:48.375896",
-    "status": "closed"
+    "id": 1,
+    "customer_id": "beta_inc",
+    "title": "Support request 1",
+    "status": "open",
+    "created_at": "2026-01-07T20:57:00",
+    "priority": "high"
   },
   {
-    "ticket_id": 2,
-    "customer_id": 35,
-    "subject": "Issue 2",
-    "priority": "medium",
-    "created_at": "2026-01-17T03:46:48.375900",
-    "status": "closed"
+    "id": 2,
+    "customer_id": "beta_inc",
+    "title": "Support request 2",
+    "status": "closed",
+    "created_at": "2026-01-08T06:06:00",
+    "priority": "high"
   },
   {
-    "ticket_id": 3,
-    "customer_id": 12,
-    "subject": "Issue 3",
-    "priority": "high",
-    "created_at": "2026-01-17T03:46:48.375903",
-    "status": "closed"
+    "id": 3,
+    "customer_id": "beta_inc",
+    "title": "Support request 3",
+    "status": "open",
+    "created_at": "2026-01-19T12:26:00",
+    "priority": "high"
   },
   {
-    "ticket_id": 4,
-    "customer_id": 35,
-    "subject": "Issue 4",
-    "priority": "high",
-    "created_at": "2026-02-04T03:46:48.375906",
-    "status": "open"
+    "id": 4,
+    "customer_id": "acme_corp",
+    "title": "Support request 4",
+    "status": "closed",
+    "created_at": "2026-01-03T08:46:00",
+    "priority": "high"
   },
   {
-    "ticket_id": 5,
-    "customer_id": 6,
-    "subject": "Issue 5",
-    "priority": "medium",
-    "created_at": "2026-02-07T03:46:48.375909",
-    "status": "closed"
+    "id": 5,
+    "customer_id": "gamma_ltd",
+    "title": "Support request 5",
+    "status": "closed",
+    "created_at": "2026-02-05T11:54:00",
+    "priority": "low"
   },
   {
-    "ticket_id": 6,
-    "customer_id": 38,
-    "subject": "Issue 6",
-    "priority": "low",
-    "created_at": "2026-02-08T03:46:48.375911",
-    "status": "open"
+    "id": 6,
+    "customer_id": "epsilon_llc",
+    "title": "Support request 6",
+    "status": "open",
+    "created_at": "2026-02-19T07:19:00",
+    "priority": "high"
   },
   {
-    "ticket_id": 7,
-    "customer_id": 21,
-    "subject": "Issue 7",
-    "priority": "low",
-    "created_at": "2026-01-30T03:46:48.375914",
-    "status": "closed"
+    "id": 7,
+    "customer_id": "epsilon_llc",
+    "title": "Support request 7",
+    "status": "open",
+    "created_at": "2026-02-07T08:47:00",
+    "priority": "low"
   },
   {
-    "ticket_id": 8,
-    "customer_id": 14,
-    "subject": "Issue 8",
-    "priority": "high",
-    "created_at": "2026-01-18T03:46:48.375921",
-    "status": "closed"
+    "id": 8,
+    "customer_id": "gamma_ltd",
+    "title": "Support request 8",
+    "status": "closed",
+    "created_at": "2026-01-10T13:13:00",
+    "priority": "high"
   },
   {
-    "ticket_id": 9,
-    "customer_id": 18,
-    "subject": "Issue 9",
-    "priority": "high",
-    "created_at": "2026-02-09T03:46:48.375927",
-    "status": "open"
+    "id": 9,
+    "customer_id": "beta_inc",
+    "title": "Support request 9",
+    "status": "open",
+    "created_at": "2026-02-15T22:04:00",
+    "priority": "high"
   },
   {
-    "ticket_id": 10,
-    "customer_id": 32,
-    "subject": "Issue 10",
-    "priority": "low",
-    "created_at": "2026-02-04T03:46:48.375932",
-    "status": "open"
+    "id": 10,
+    "customer_id": "gamma_ltd",
+    "title": "Support request 10",
+    "status": "closed",
+    "created_at": "2026-01-31T20:05:00",
+    "priority": "low"
   },
   {
-    "ticket_id": 11,
-    "customer_id": 8,
-    "subject": "Issue 11",
-    "priority": "high",
-    "created_at": "2026-02-04T03:46:48.375946",
-    "status": "open"
+    "id": 11,
+    "customer_id": "acme_corp",
+    "title": "Support request 11",
+    "status": "closed",
+    "created_at": "2026-02-17T05:51:00",
+    "priority": "high"
   },
   {
-    "ticket_id": 12,
-    "customer_id": 30,
-    "subject": "Issue 12",
-    "priority": "medium",
-    "created_at": "2026-01-27T03:46:48.375951",
-    "status": "closed"
+    "id": 12,
+    "customer_id": "delta_co",
+    "title": "Support request 12",
+    "status": "closed",
+    "created_at": "2026-01-15T04:49:00",
+    "priority": "low"
   },
   {
-    "ticket_id": 13,
-    "customer_id": 20,
-    "subject": "Issue 13",
-    "priority": "low",
-    "created_at": "2026-02-06T03:46:48.375953",
-    "status": "closed"
+    "id": 13,
+    "customer_id": "epsilon_llc",
+    "title": "Support request 13",
+    "status": "open",
+    "created_at": "2026-02-03T16:51:00",
+    "priority": "low"
   },
   {
-    "ticket_id": 14,
-    "customer_id": 4,
-    "subject": "Issue 14",
-    "priority": "low",
-    "created_at": "2026-02-09T03:46:48.375956",
-    "status": "open"
+    "id": 14,
+    "customer_id": "gamma_ltd",
+    "title": "Support request 14",
+    "status": "closed",
+    "created_at": "2026-01-05T04:28:00",
+    "priority": "high"
   },
   {
-    "ticket_id": 15,
-    "customer_id": 31,
-    "subject": "Issue 15",
-    "priority": "medium",
-    "created_at": "2026-02-15T03:46:48.375958",
-    "status": "open"
+    "id": 15,
+    "customer_id": "epsilon_llc",
+    "title": "Support request 15",
+    "status": "open",
+    "created_at": "2026-01-30T02:41:00",
+    "priority": "low"
   },
   {
-    "ticket_id": 16,
-    "customer_id": 5,
-    "subject": "Issue 16",
-    "priority": "low",
-    "created_at": "2026-02-12T03:46:48.375961",
-    "status": "open"
+    "id": 16,
+    "customer_id": "epsilon_llc",
+    "title": "Support request 16",
+    "status": "closed",
+    "created_at": "2026-02-15T18:31:00",
+    "priority": "high"
   },
   {
-    "ticket_id": 17,
-    "customer_id": 22,
-    "subject": "Issue 17",
-    "priority": "high",
-    "created_at": "2026-01-28T03:46:48.375963",
-    "status": "open"
+    "id": 17,
+    "customer_id": "delta_co",
+    "title": "Support request 17",
+    "status": "closed",
+    "created_at": "2026-01-20T22:51:00",
+    "priority": "low"
   },
   {
-    "ticket_id": 18,
-    "customer_id": 37,
-    "subject": "Issue 18",
-    "priority": "medium",
-    "created_at": "2026-02-01T03:46:48.375966",
-    "status": "closed"
+    "id": 18,
+    "customer_id": "acme_corp",
+    "title": "Support request 18",
+    "status": "open",
+    "created_at": "2026-02-18T01:26:00",
+    "priority": "high"
   },
   {
-    "ticket_id": 19,
-    "customer_id": 36,
-    "subject": "Issue 19",
-    "priority": "medium",
-    "created_at": "2026-01-18T03:46:48.375969",
-    "status": "open"
+    "id": 19,
+    "customer_id": "acme_corp",
+    "title": "Support request 19",
+    "status": "closed",
+    "created_at": "2026-01-07T15:02:00",
+    "priority": "high"
   },
   {
-    "ticket_id": 20,
-    "customer_id": 21,
-    "subject": "Issue 20",
-    "priority": "high",
-    "created_at": "2026-02-12T03:46:48.375972",
-    "status": "closed"
+    "id": 20,
+    "customer_id": "beta_inc",
+    "title": "Support request 20",
+    "status": "open",
+    "created_at": "2026-02-07T05:58:00",
+    "priority": "low"
   },
   {
-    "ticket_id": 21,
-    "customer_id": 15,
-    "subject": "Issue 21",
-    "priority": "low",
-    "created_at": "2026-02-01T03:46:48.375974",
-    "status": "open"
+    "id": 21,
+    "customer_id": "delta_co",
+    "title": "Support request 21",
+    "status": "closed",
+    "created_at": "2026-01-02T01:58:00",
+    "priority": "low"
   },
   {
-    "ticket_id": 22,
-    "customer_id": 44,
-    "subject": "Issue 22",
-    "priority": "high",
-    "created_at": "2026-01-27T03:46:48.375977",
-    "status": "open"
+    "id": 22,
+    "customer_id": "acme_corp",
+    "title": "Support request 22",
+    "status": "closed",
+    "created_at": "2026-02-20T20:22:00",
+    "priority": "high"
   },
   {
-    "ticket_id": 23,
-    "customer_id": 5,
-    "subject": "Issue 23",
-    "priority": "medium",
-    "created_at": "2026-01-18T03:46:48.375979",
-    "status": "open"
+    "id": 23,
+    "customer_id": "epsilon_llc",
+    "title": "Support request 23",
+    "status": "closed",
+    "created_at": "2026-01-04T08:28:00",
+    "priority": "high"
   },
   {
-    "ticket_id": 24,
-    "customer_id": 25,
-    "subject": "Issue 24",
-    "priority": "high",
-    "created_at": "2026-02-04T03:46:48.375982",
-    "status": "open"
+    "id": 24,
+    "customer_id": "beta_inc",
+    "title": "Support request 24",
+    "status": "closed",
+    "created_at": "2026-01-16T02:21:00",
+    "priority": "low"
   },
   {
-    "ticket_id": 25,
-    "customer_id": 2,
-    "subject": "Issue 25",
-    "priority": "medium",
-    "created_at": "2026-01-18T03:46:48.375984",
-    "status": "open"
+    "id": 25,
+    "customer_id": "delta_co",
+    "title": "Support request 25",
+    "status": "closed",
+    "created_at": "2026-02-05T20:20:00",
+    "priority": "low"
   },
   {
-    "ticket_id": 26,
-    "customer_id": 50,
-    "subject": "Issue 26",
-    "priority": "low",
-    "created_at": "2026-02-10T03:46:48.375987",
-    "status": "open"
+    "id": 26,
+    "customer_id": "epsilon_llc",
+    "title": "Support request 26",
+    "status": "closed",
+    "created_at": "2026-02-19T02:40:00",
+    "priority": "high"
   },
   {
-    "ticket_id": 27,
-    "customer_id": 21,
-    "subject": "Issue 27",
-    "priority": "high",
-    "created_at": "2026-01-18T03:46:48.375989",
-    "status": "closed"
+    "id": 27,
+    "customer_id": "gamma_ltd",
+    "title": "Support request 27",
+    "status": "closed",
+    "created_at": "2026-01-09T19:27:00",
+    "priority": "high"
   },
   {
-    "ticket_id": 28,
-    "customer_id": 7,
-    "subject": "Issue 28",
-    "priority": "medium",
-    "created_at": "2026-02-08T03:46:48.375992",
-    "status": "open"
+    "id": 28,
+    "customer_id": "beta_inc",
+    "title": "Support request 28",
+    "status": "open",
+    "created_at": "2026-02-18T14:04:00",
+    "priority": "low"
   },
   {
-    "ticket_id": 29,
-    "customer_id": 11,
-    "subject": "Issue 29",
-    "priority": "medium",
-    "created_at": "2026-01-29T03:46:48.375994",
-    "status": "open"
+    "id": 29,
+    "customer_id": "beta_inc",
+    "title": "Support request 29",
+    "status": "open",
+    "created_at": "2026-01-25T09:57:00",
+    "priority": "high"
   },
   {
-    "ticket_id": 30,
-    "customer_id": 29,
-    "subject": "Issue 30",
-    "priority": "high",
-    "created_at": "2026-01-25T03:46:48.375996",
-    "status": "closed"
+    "id": 30,
+    "customer_id": "beta_inc",
+    "title": "Support request 30",
+    "status": "open",
+    "created_at": "2026-02-19T01:17:00",
+    "priority": "high"
   },
   {
-    "ticket_id": 31,
-    "customer_id": 48,
-    "subject": "Issue 31",
-    "priority": "low",
-    "created_at": "2026-01-25T03:46:48.375999",
-    "status": "closed"
+    "id": 31,
+    "customer_id": "acme_corp",
+    "title": "Support request 31",
+    "status": "open",
+    "created_at": "2026-02-04T07:30:00",
+    "priority": "high"
   },
   {
-    "ticket_id": 32,
-    "customer_id": 36,
-    "subject": "Issue 32",
-    "priority": "low",
-    "created_at": "2026-01-25T03:46:48.376001",
-    "status": "closed"
+    "id": 32,
+    "customer_id": "delta_co",
+    "title": "Support request 32",
+    "status": "open",
+    "created_at": "2026-01-01T21:19:00",
+    "priority": "high"
   },
   {
-    "ticket_id": 33,
-    "customer_id": 30,
-    "subject": "Issue 33",
-    "priority": "high",
-    "created_at": "2026-02-11T03:46:48.376004",
-    "status": "open"
+    "id": 33,
+    "customer_id": "acme_corp",
+    "title": "Support request 33",
+    "status": "open",
+    "created_at": "2026-01-13T14:18:00",
+    "priority": "high"
   },
   {
-    "ticket_id": 34,
-    "customer_id": 40,
-    "subject": "Issue 34",
-    "priority": "medium",
-    "created_at": "2026-02-04T03:46:48.376006",
-    "status": "open"
+    "id": 34,
+    "customer_id": "beta_inc",
+    "title": "Support request 34",
+    "status": "open",
+    "created_at": "2026-01-04T18:41:00",
+    "priority": "low"
   },
   {
-    "ticket_id": 35,
-    "customer_id": 35,
-    "subject": "Issue 35",
-    "priority": "low",
-    "created_at": "2026-02-15T03:46:48.376009",
-    "status": "closed"
+    "id": 35,
+    "customer_id": "gamma_ltd",
+    "title": "Support request 35",
+    "status": "open",
+    "created_at": "2026-02-15T14:39:00",
+    "priority": "high"
   },
   {
-    "ticket_id": 36,
-    "customer_id": 24,
-    "subject": "Issue 36",
-    "priority": "medium",
-    "created_at": "2026-02-13T03:46:48.376012",
-    "status": "closed"
+    "id": 36,
+    "customer_id": "beta_inc",
+    "title": "Support request 36",
+    "status": "closed",
+    "created_at": "2026-01-02T07:12:00",
+    "priority": "low"
   },
   {
-    "ticket_id": 37,
-    "customer_id": 34,
-    "subject": "Issue 37",
-    "priority": "high",
-    "created_at": "2026-01-20T03:46:48.376014",
-    "status": "open"
+    "id": 37,
+    "customer_id": "delta_co",
+    "title": "Support request 37",
+    "status": "closed",
+    "created_at": "2026-01-11T02:17:00",
+    "priority": "high"
   },
   {
-    "ticket_id": 38,
-    "customer_id": 47,
-    "subject": "Issue 38",
-    "priority": "medium",
-    "created_at": "2026-01-18T03:46:48.376016",
-    "status": "closed"
+    "id": 38,
+    "customer_id": "acme_corp",
+    "title": "Support request 38",
+    "status": "closed",
+    "created_at": "2026-01-14T23:59:00",
+    "priority": "low"
   },
   {
-    "ticket_id": 39,
-    "customer_id": 33,
-    "subject": "Issue 39",
-    "priority": "low",
-    "created_at": "2026-01-17T03:46:48.376019",
-    "status": "closed"
+    "id": 39,
+    "customer_id": "gamma_ltd",
+    "title": "Support request 39",
+    "status": "closed",
+    "created_at": "2026-02-19T19:30:00",
+    "priority": "low"
   },
   {
-    "ticket_id": 40,
-    "customer_id": 19,
-    "subject": "Issue 40",
-    "priority": "high",
-    "created_at": "2026-02-08T03:46:48.376021",
-    "status": "open"
+    "id": 40,
+    "customer_id": "epsilon_llc",
+    "title": "Support request 40",
+    "status": "closed",
+    "created_at": "2026-01-11T21:55:00",
+    "priority": "low"
   },
   {
-    "ticket_id": 41,
-    "customer_id": 34,
-    "subject": "Issue 41",
-    "priority": "medium",
-    "created_at": "2026-02-04T03:46:48.376024",
-    "status": "closed"
+    "id": 41,
+    "customer_id": "gamma_ltd",
+    "title": "Support request 41",
+    "status": "open",
+    "created_at": "2026-01-13T02:12:00",
+    "priority": "high"
   },
   {
-    "ticket_id": 42,
-    "customer_id": 2,
-    "subject": "Issue 42",
-    "priority": "low",
-    "created_at": "2026-01-20T03:46:48.376026",
-    "status": "closed"
+    "id": 42,
+    "customer_id": "gamma_ltd",
+    "title": "Support request 42",
+    "status": "closed",
+    "created_at": "2026-01-24T09:32:00",
+    "priority": "low"
   },
   {
-    "ticket_id": 43,
-    "customer_id": 26,
-    "subject": "Issue 43",
-    "priority": "low",
-    "created_at": "2026-02-07T03:46:48.376028",
-    "status": "closed"
+    "id": 43,
+    "customer_id": "acme_corp",
+    "title": "Support request 43",
+    "status": "closed",
+    "created_at": "2026-02-16T04:45:00",
+    "priority": "low"
   },
   {
-    "ticket_id": 44,
-    "customer_id": 38,
-    "subject": "Issue 44",
-    "priority": "low",
-    "created_at": "2026-01-17T03:46:48.376031",
-    "status": "closed"
+    "id": 44,
+    "customer_id": "epsilon_llc",
+    "title": "Support request 44",
+    "status": "open",
+    "created_at": "2026-01-03T18:38:00",
+    "priority": "low"
   },
   {
-    "ticket_id": 45,
-    "customer_id": 47,
-    "subject": "Issue 45",
-    "priority": "medium",
-    "created_at": "2026-02-12T03:46:48.376033",
-    "status": "closed"
+    "id": 45,
+    "customer_id": "beta_inc",
+    "title": "Support request 45",
+    "status": "open",
+    "created_at": "2026-01-08T16:06:00",
+    "priority": "high"
   },
   {
-    "ticket_id": 46,
-    "customer_id": 45,
-    "subject": "Issue 46",
-    "priority": "medium",
-    "created_at": "2026-01-19T03:46:48.376035",
-    "status": "closed"
+    "id": 46,
+    "customer_id": "epsilon_llc",
+    "title": "Support request 46",
+    "status": "closed",
+    "created_at": "2026-02-16T04:19:00",
+    "priority": "low"
   },
   {
-    "ticket_id": 47,
-    "customer_id": 40,
-    "subject": "Issue 47",
-    "priority": "low",
-    "created_at": "2026-01-21T03:46:48.376037",
-    "status": "open"
+    "id": 47,
+    "customer_id": "epsilon_llc",
+    "title": "Support request 47",
+    "status": "open",
+    "created_at": "2026-01-03T22:22:00",
+    "priority": "high"
   },
   {
-    "ticket_id": 48,
-    "customer_id": 4,
-    "subject": "Issue 48",
-    "priority": "high",
-    "created_at": "2026-02-05T03:46:48.376039",
-    "status": "open"
+    "id": 48,
+    "customer_id": "acme_corp",
+    "title": "Support request 48",
+    "status": "open",
+    "created_at": "2026-01-19T09:16:00",
+    "priority": "high"
   },
   {
-    "ticket_id": 49,
-    "customer_id": 40,
-    "subject": "Issue 49",
-    "priority": "high",
-    "created_at": "2026-01-26T03:46:48.376042",
-    "status": "closed"
+    "id": 49,
+    "customer_id": "epsilon_llc",
+    "title": "Support request 49",
+    "status": "closed",
+    "created_at": "2026-01-25T15:52:00",
+    "priority": "low"
   },
   {
-    "ticket_id": 50,
-    "customer_id": 40,
-    "subject": "Issue 50",
-    "priority": "medium",
-    "created_at": "2026-01-26T03:46:48.376044",
-    "status": "open"
+    "id": 50,
+    "customer_id": "epsilon_llc",
+    "title": "Support request 50",
+    "status": "open",
+    "created_at": "2026-02-02T12:18:00",
+    "priority": "low"
+  },
+  {
+    "id": 51,
+    "customer_id": "beta_inc",
+    "title": "Support request 51",
+    "status": "open",
+    "created_at": "2026-01-03T14:55:00",
+    "priority": "high"
+  },
+  {
+    "id": 52,
+    "customer_id": "acme_corp",
+    "title": "Support request 52",
+    "status": "closed",
+    "created_at": "2026-02-15T08:19:00",
+    "priority": "low"
+  },
+  {
+    "id": 53,
+    "customer_id": "delta_co",
+    "title": "Support request 53",
+    "status": "closed",
+    "created_at": "2026-02-01T12:24:00",
+    "priority": "low"
+  },
+  {
+    "id": 54,
+    "customer_id": "beta_inc",
+    "title": "Support request 54",
+    "status": "open",
+    "created_at": "2026-01-13T08:14:00",
+    "priority": "high"
+  },
+  {
+    "id": 55,
+    "customer_id": "beta_inc",
+    "title": "Support request 55",
+    "status": "closed",
+    "created_at": "2026-01-16T16:12:00",
+    "priority": "high"
+  },
+  {
+    "id": 56,
+    "customer_id": "gamma_ltd",
+    "title": "Support request 56",
+    "status": "closed",
+    "created_at": "2026-01-12T11:15:00",
+    "priority": "high"
+  },
+  {
+    "id": 57,
+    "customer_id": "beta_inc",
+    "title": "Support request 57",
+    "status": "closed",
+    "created_at": "2026-01-25T15:02:00",
+    "priority": "low"
+  },
+  {
+    "id": 58,
+    "customer_id": "epsilon_llc",
+    "title": "Support request 58",
+    "status": "open",
+    "created_at": "2026-01-31T04:43:00",
+    "priority": "low"
+  },
+  {
+    "id": 59,
+    "customer_id": "delta_co",
+    "title": "Support request 59",
+    "status": "closed",
+    "created_at": "2026-02-17T13:40:00",
+    "priority": "low"
+  },
+  {
+    "id": 60,
+    "customer_id": "beta_inc",
+    "title": "Support request 60",
+    "status": "open",
+    "created_at": "2026-02-20T14:23:00",
+    "priority": "high"
+  },
+  {
+    "id": 61,
+    "customer_id": "acme_corp",
+    "title": "Support request 61",
+    "status": "open",
+    "created_at": "2026-01-04T05:58:00",
+    "priority": "high"
+  },
+  {
+    "id": 62,
+    "customer_id": "beta_inc",
+    "title": "Support request 62",
+    "status": "closed",
+    "created_at": "2026-01-20T07:46:00",
+    "priority": "low"
+  },
+  {
+    "id": 63,
+    "customer_id": "epsilon_llc",
+    "title": "Support request 63",
+    "status": "closed",
+    "created_at": "2026-01-13T00:54:00",
+    "priority": "low"
+  },
+  {
+    "id": 64,
+    "customer_id": "delta_co",
+    "title": "Support request 64",
+    "status": "closed",
+    "created_at": "2026-01-22T05:36:00",
+    "priority": "low"
+  },
+  {
+    "id": 65,
+    "customer_id": "epsilon_llc",
+    "title": "Support request 65",
+    "status": "open",
+    "created_at": "2026-01-20T23:44:00",
+    "priority": "low"
+  },
+  {
+    "id": 66,
+    "customer_id": "acme_corp",
+    "title": "Support request 66",
+    "status": "closed",
+    "created_at": "2026-01-20T00:07:00",
+    "priority": "high"
+  },
+  {
+    "id": 67,
+    "customer_id": "gamma_ltd",
+    "title": "Support request 67",
+    "status": "closed",
+    "created_at": "2026-02-10T05:22:00",
+    "priority": "high"
+  },
+  {
+    "id": 68,
+    "customer_id": "beta_inc",
+    "title": "Support request 68",
+    "status": "closed",
+    "created_at": "2026-01-16T15:36:00",
+    "priority": "high"
+  },
+  {
+    "id": 69,
+    "customer_id": "acme_corp",
+    "title": "Support request 69",
+    "status": "closed",
+    "created_at": "2026-02-18T03:14:00",
+    "priority": "low"
+  },
+  {
+    "id": 70,
+    "customer_id": "beta_inc",
+    "title": "Support request 70",
+    "status": "closed",
+    "created_at": "2026-01-17T19:49:00",
+    "priority": "high"
+  },
+  {
+    "id": 71,
+    "customer_id": "epsilon_llc",
+    "title": "Support request 71",
+    "status": "open",
+    "created_at": "2026-01-20T12:14:00",
+    "priority": "low"
+  },
+  {
+    "id": 72,
+    "customer_id": "acme_corp",
+    "title": "Support request 72",
+    "status": "closed",
+    "created_at": "2026-02-09T01:26:00",
+    "priority": "low"
+  },
+  {
+    "id": 73,
+    "customer_id": "beta_inc",
+    "title": "Support request 73",
+    "status": "closed",
+    "created_at": "2026-01-14T20:39:00",
+    "priority": "high"
+  },
+  {
+    "id": 74,
+    "customer_id": "beta_inc",
+    "title": "Support request 74",
+    "status": "closed",
+    "created_at": "2026-01-01T05:52:00",
+    "priority": "high"
+  },
+  {
+    "id": 75,
+    "customer_id": "gamma_ltd",
+    "title": "Support request 75",
+    "status": "open",
+    "created_at": "2026-01-09T11:04:00",
+    "priority": "high"
+  },
+  {
+    "id": 76,
+    "customer_id": "epsilon_llc",
+    "title": "Support request 76",
+    "status": "closed",
+    "created_at": "2026-02-11T09:47:00",
+    "priority": "low"
+  },
+  {
+    "id": 77,
+    "customer_id": "epsilon_llc",
+    "title": "Support request 77",
+    "status": "closed",
+    "created_at": "2026-01-04T08:43:00",
+    "priority": "low"
+  },
+  {
+    "id": 78,
+    "customer_id": "delta_co",
+    "title": "Support request 78",
+    "status": "closed",
+    "created_at": "2026-01-07T13:00:00",
+    "priority": "low"
+  },
+  {
+    "id": 79,
+    "customer_id": "gamma_ltd",
+    "title": "Support request 79",
+    "status": "closed",
+    "created_at": "2026-01-03T12:44:00",
+    "priority": "high"
+  },
+  {
+    "id": 80,
+    "customer_id": "delta_co",
+    "title": "Support request 80",
+    "status": "open",
+    "created_at": "2026-02-10T08:22:00",
+    "priority": "high"
+  },
+  {
+    "id": 81,
+    "customer_id": "gamma_ltd",
+    "title": "Support request 81",
+    "status": "closed",
+    "created_at": "2026-01-05T02:11:00",
+    "priority": "low"
+  },
+  {
+    "id": 82,
+    "customer_id": "acme_corp",
+    "title": "Support request 82",
+    "status": "open",
+    "created_at": "2026-02-16T19:12:00",
+    "priority": "high"
+  },
+  {
+    "id": 83,
+    "customer_id": "gamma_ltd",
+    "title": "Support request 83",
+    "status": "closed",
+    "created_at": "2026-02-11T05:38:00",
+    "priority": "low"
+  },
+  {
+    "id": 84,
+    "customer_id": "gamma_ltd",
+    "title": "Support request 84",
+    "status": "closed",
+    "created_at": "2026-01-09T14:24:00",
+    "priority": "low"
+  },
+  {
+    "id": 85,
+    "customer_id": "gamma_ltd",
+    "title": "Support request 85",
+    "status": "open",
+    "created_at": "2026-01-09T04:51:00",
+    "priority": "high"
+  },
+  {
+    "id": 86,
+    "customer_id": "gamma_ltd",
+    "title": "Support request 86",
+    "status": "closed",
+    "created_at": "2026-02-01T07:55:00",
+    "priority": "high"
+  },
+  {
+    "id": 87,
+    "customer_id": "epsilon_llc",
+    "title": "Support request 87",
+    "status": "open",
+    "created_at": "2026-02-15T02:52:00",
+    "priority": "low"
+  },
+  {
+    "id": 88,
+    "customer_id": "epsilon_llc",
+    "title": "Support request 88",
+    "status": "closed",
+    "created_at": "2026-01-15T00:50:00",
+    "priority": "low"
+  },
+  {
+    "id": 89,
+    "customer_id": "acme_corp",
+    "title": "Support request 89",
+    "status": "open",
+    "created_at": "2026-02-15T09:33:00",
+    "priority": "low"
+  },
+  {
+    "id": 90,
+    "customer_id": "beta_inc",
+    "title": "Support request 90",
+    "status": "open",
+    "created_at": "2026-01-06T19:09:00",
+    "priority": "high"
+  },
+  {
+    "id": 91,
+    "customer_id": "epsilon_llc",
+    "title": "Support request 91",
+    "status": "open",
+    "created_at": "2026-01-02T07:53:00",
+    "priority": "high"
+  },
+  {
+    "id": 92,
+    "customer_id": "delta_co",
+    "title": "Support request 92",
+    "status": "open",
+    "created_at": "2026-01-21T18:20:00",
+    "priority": "high"
+  },
+  {
+    "id": 93,
+    "customer_id": "epsilon_llc",
+    "title": "Support request 93",
+    "status": "open",
+    "created_at": "2026-01-01T12:15:00",
+    "priority": "low"
+  },
+  {
+    "id": 94,
+    "customer_id": "delta_co",
+    "title": "Support request 94",
+    "status": "open",
+    "created_at": "2026-02-13T12:45:00",
+    "priority": "high"
+  },
+  {
+    "id": 95,
+    "customer_id": "gamma_ltd",
+    "title": "Support request 95",
+    "status": "closed",
+    "created_at": "2026-01-26T11:38:00",
+    "priority": "high"
+  },
+  {
+    "id": 96,
+    "customer_id": "acme_corp",
+    "title": "Support request 96",
+    "status": "closed",
+    "created_at": "2026-02-18T10:15:00",
+    "priority": "high"
+  },
+  {
+    "id": 97,
+    "customer_id": "gamma_ltd",
+    "title": "Support request 97",
+    "status": "open",
+    "created_at": "2026-01-09T10:17:00",
+    "priority": "low"
+  },
+  {
+    "id": 98,
+    "customer_id": "acme_corp",
+    "title": "Support request 98",
+    "status": "open",
+    "created_at": "2026-01-28T12:01:00",
+    "priority": "low"
+  },
+  {
+    "id": 99,
+    "customer_id": "delta_co",
+    "title": "Support request 99",
+    "status": "closed",
+    "created_at": "2026-01-09T23:21:00",
+    "priority": "high"
+  },
+  {
+    "id": 100,
+    "customer_id": "acme_corp",
+    "title": "Support request 100",
+    "status": "open",
+    "created_at": "2026-01-23T04:10:00",
+    "priority": "high"
   }
 ]

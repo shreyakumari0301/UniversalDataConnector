@@ -1,152 +1,1202 @@
 [
   {
-    "metric": "daily_active_users",
-    "date": "2026-02-16",
-    "value": 872
+    "timestamp": "2026-02-01T00:00:00",
+    "customer_id": "epsilon_llc",
+    "metric": "revenue",
+    "value": 8997.27
   },
   {
-    "metric": "daily_active_users",
-    "date": "2026-02-15",
-    "value": 162
+    "timestamp": "2026-02-01T01:07:00",
+    "customer_id": "delta_co",
+    "metric": "revenue",
+    "value": 7.0
   },
   {
-    "metric": "daily_active_users",
-    "date": "2026-02-14",
-    "value": 906
+    "timestamp": "2026-02-01T02:14:00",
+    "customer_id": "acme_corp",
+    "metric": "orders",
+    "value": 50.21
   },
   {
-    "metric": "daily_active_users",
-    "date": "2026-02-13",
-    "value": 439
+    "timestamp": "2026-02-01T03:21:00",
+    "customer_id": "epsilon_llc",
+    "metric": "orders",
+    "value": 135.64
   },
   {
-    "metric": "daily_active_users",
-    "date": "2026-02-12",
-    "value": 391
+    "timestamp": "2026-02-01T04:28:00",
+    "customer_id": "epsilon_llc",
+    "metric": "revenue",
+    "value": 29746.47
   },
   {
-    "metric": "daily_active_users",
-    "date": "2026-02-11",
-    "value": 176
+    "timestamp": "2026-02-01T05:35:00",
+    "customer_id": "beta_inc",
+    "metric": "orders",
+    "value": 18360.23
   },
   {
-    "metric": "daily_active_users",
-    "date": "2026-02-10",
-    "value": 428
+    "timestamp": "2026-02-01T06:42:00",
+    "customer_id": "delta_co",
+    "metric": "orders",
+    "value": 6192.06
   },
   {
-    "metric": "daily_active_users",
-    "date": "2026-02-09",
-    "value": 604
+    "timestamp": "2026-02-01T07:49:00",
+    "customer_id": "epsilon_llc",
+    "metric": "revenue",
+    "value": 57.01
   },
   {
-    "metric": "daily_active_users",
-    "date": "2026-02-08",
-    "value": 904
+    "timestamp": "2026-02-01T08:56:00",
+    "customer_id": "acme_corp",
+    "metric": "orders",
+    "value": 29264.88
   },
   {
-    "metric": "daily_active_users",
-    "date": "2026-02-07",
-    "value": 747
+    "timestamp": "2026-02-01T09:03:00",
+    "customer_id": "beta_inc",
+    "metric": "orders",
+    "value": 22072.03
   },
   {
-    "metric": "daily_active_users",
-    "date": "2026-02-06",
-    "value": 401
+    "timestamp": "2026-02-02T10:10:00",
+    "customer_id": "gamma_ltd",
+    "metric": "revenue",
+    "value": 32104.45
   },
   {
-    "metric": "daily_active_users",
-    "date": "2026-02-05",
-    "value": 578
+    "timestamp": "2026-02-02T11:17:00",
+    "customer_id": "delta_co",
+    "metric": "orders",
+    "value": 16557.24
   },
   {
-    "metric": "daily_active_users",
-    "date": "2026-02-04",
-    "value": 642
+    "timestamp": "2026-02-02T12:24:00",
+    "customer_id": "acme_corp",
+    "metric": "revenue",
+    "value": 44.43
   },
   {
-    "metric": "daily_active_users",
-    "date": "2026-02-03",
-    "value": 714
+    "timestamp": "2026-02-02T13:31:00",
+    "customer_id": "beta_inc",
+    "metric": "orders",
+    "value": 24.88
   },
   {
-    "metric": "daily_active_users",
-    "date": "2026-02-02",
-    "value": 948
+    "timestamp": "2026-02-02T14:38:00",
+    "customer_id": "gamma_ltd",
+    "metric": "orders",
+    "value": 6358.2
   },
   {
-    "metric": "daily_active_users",
-    "date": "2026-02-01",
-    "value": 852
+    "timestamp": "2026-02-02T15:45:00",
+    "customer_id": "beta_inc",
+    "metric": "orders",
+    "value": 1965.8
   },
   {
-    "metric": "daily_active_users",
-    "date": "2026-01-31",
-    "value": 491
+    "timestamp": "2026-02-02T16:52:00",
+    "customer_id": "beta_inc",
+    "metric": "revenue",
+    "value": 3361.08
   },
   {
-    "metric": "daily_active_users",
-    "date": "2026-01-30",
-    "value": 685
+    "timestamp": "2026-02-02T17:59:00",
+    "customer_id": "delta_co",
+    "metric": "revenue",
+    "value": 181.85
   },
   {
-    "metric": "daily_active_users",
-    "date": "2026-01-29",
-    "value": 176
+    "timestamp": "2026-02-02T18:06:00",
+    "customer_id": "epsilon_llc",
+    "metric": "orders",
+    "value": 45.31
   },
   {
-    "metric": "daily_active_users",
-    "date": "2026-01-28",
-    "value": 452
+    "timestamp": "2026-02-02T19:13:00",
+    "customer_id": "beta_inc",
+    "metric": "revenue",
+    "value": 110.31
   },
   {
-    "metric": "daily_active_users",
-    "date": "2026-01-27",
-    "value": 560
+    "timestamp": "2026-02-03T20:20:00",
+    "customer_id": "beta_inc",
+    "metric": "revenue",
+    "value": 31206.74
   },
   {
-    "metric": "daily_active_users",
-    "date": "2026-01-26",
-    "value": 669
+    "timestamp": "2026-02-03T21:27:00",
+    "customer_id": "beta_inc",
+    "metric": "orders",
+    "value": 157.49
   },
   {
-    "metric": "daily_active_users",
-    "date": "2026-01-25",
-    "value": 812
+    "timestamp": "2026-02-03T22:34:00",
+    "customer_id": "epsilon_llc",
+    "metric": "orders",
+    "value": 135.23
   },
   {
-    "metric": "daily_active_users",
-    "date": "2026-01-24",
-    "value": 855
+    "timestamp": "2026-02-03T23:41:00",
+    "customer_id": "delta_co",
+    "metric": "orders",
+    "value": 184.8
   },
   {
-    "metric": "daily_active_users",
-    "date": "2026-01-23",
-    "value": 217
+    "timestamp": "2026-02-03T00:48:00",
+    "customer_id": "gamma_ltd",
+    "metric": "orders",
+    "value": 24544.81
   },
   {
-    "metric": "daily_active_users",
-    "date": "2026-01-22",
-    "value": 273
+    "timestamp": "2026-02-03T01:55:00",
+    "customer_id": "acme_corp",
+    "metric": "revenue",
+    "value": 25100.47
   },
   {
-    "metric": "daily_active_users",
-    "date": "2026-01-21",
-    "value": 407
+    "timestamp": "2026-02-03T02:02:00",
+    "customer_id": "acme_corp",
+    "metric": "revenue",
+    "value": 42561.25
   },
   {
-    "metric": "daily_active_users",
-    "date": "2026-01-20",
-    "value": 222
+    "timestamp": "2026-02-03T03:09:00",
+    "customer_id": "gamma_ltd",
+    "metric": "orders",
+    "value": 13872.32
   },
   {
-    "metric": "daily_active_users",
-    "date": "2026-01-19",
-    "value": 500
+    "timestamp": "2026-02-03T04:16:00",
+    "customer_id": "epsilon_llc",
+    "metric": "revenue",
+    "value": 3.43
   },
   {
-    "metric": "daily_active_users",
-    "date": "2026-01-18",
-    "value": 649
+    "timestamp": "2026-02-03T05:23:00",
+    "customer_id": "gamma_ltd",
+    "metric": "revenue",
+    "value": 25096.29
+  },
+  {
+    "timestamp": "2026-02-04T06:30:00",
+    "customer_id": "beta_inc",
+    "metric": "orders",
+    "value": 121.94
+  },
+  {
+    "timestamp": "2026-02-04T07:37:00",
+    "customer_id": "epsilon_llc",
+    "metric": "orders",
+    "value": 145.62
+  },
+  {
+    "timestamp": "2026-02-04T08:44:00",
+    "customer_id": "delta_co",
+    "metric": "revenue",
+    "value": 47935.77
+  },
+  {
+    "timestamp": "2026-02-04T09:51:00",
+    "customer_id": "epsilon_llc",
+    "metric": "orders",
+    "value": 20.23
+  },
+  {
+    "timestamp": "2026-02-04T10:58:00",
+    "customer_id": "delta_co",
+    "metric": "orders",
+    "value": 24945.58
+  },
+  {
+    "timestamp": "2026-02-04T11:05:00",
+    "customer_id": "acme_corp",
+    "metric": "revenue",
+    "value": 192.99
+  },
+  {
+    "timestamp": "2026-02-04T12:12:00",
+    "customer_id": "delta_co",
+    "metric": "revenue",
+    "value": 134.65
+  },
+  {
+    "timestamp": "2026-02-04T13:19:00",
+    "customer_id": "gamma_ltd",
+    "metric": "revenue",
+    "value": 82.81
+  },
+  {
+    "timestamp": "2026-02-04T14:26:00",
+    "customer_id": "delta_co",
+    "metric": "orders",
+    "value": 10517.13
+  },
+  {
+    "timestamp": "2026-02-04T15:33:00",
+    "customer_id": "delta_co",
+    "metric": "revenue",
+    "value": 46.21
+  },
+  {
+    "timestamp": "2026-02-05T16:40:00",
+    "customer_id": "acme_corp",
+    "metric": "orders",
+    "value": 10318.06
+  },
+  {
+    "timestamp": "2026-02-05T17:47:00",
+    "customer_id": "gamma_ltd",
+    "metric": "orders",
+    "value": 103.65
+  },
+  {
+    "timestamp": "2026-02-05T18:54:00",
+    "customer_id": "delta_co",
+    "metric": "revenue",
+    "value": 167.19
+  },
+  {
+    "timestamp": "2026-02-05T19:01:00",
+    "customer_id": "epsilon_llc",
+    "metric": "revenue",
+    "value": 35517.44
+  },
+  {
+    "timestamp": "2026-02-05T20:08:00",
+    "customer_id": "delta_co",
+    "metric": "orders",
+    "value": 129.72
+  },
+  {
+    "timestamp": "2026-02-05T21:15:00",
+    "customer_id": "epsilon_llc",
+    "metric": "orders",
+    "value": 43988.22
+  },
+  {
+    "timestamp": "2026-02-05T22:22:00",
+    "customer_id": "epsilon_llc",
+    "metric": "orders",
+    "value": 70.76
+  },
+  {
+    "timestamp": "2026-02-05T23:29:00",
+    "customer_id": "delta_co",
+    "metric": "orders",
+    "value": 82.62
+  },
+  {
+    "timestamp": "2026-02-05T00:36:00",
+    "customer_id": "gamma_ltd",
+    "metric": "orders",
+    "value": 137.16
+  },
+  {
+    "timestamp": "2026-02-05T01:43:00",
+    "customer_id": "epsilon_llc",
+    "metric": "orders",
+    "value": 29029.64
+  },
+  {
+    "timestamp": "2026-02-06T02:50:00",
+    "customer_id": "acme_corp",
+    "metric": "revenue",
+    "value": 130.91
+  },
+  {
+    "timestamp": "2026-02-06T03:57:00",
+    "customer_id": "gamma_ltd",
+    "metric": "orders",
+    "value": 149.3
+  },
+  {
+    "timestamp": "2026-02-06T04:04:00",
+    "customer_id": "beta_inc",
+    "metric": "orders",
+    "value": 42493.25
+  },
+  {
+    "timestamp": "2026-02-06T05:11:00",
+    "customer_id": "delta_co",
+    "metric": "revenue",
+    "value": 129.21
+  },
+  {
+    "timestamp": "2026-02-06T06:18:00",
+    "customer_id": "delta_co",
+    "metric": "revenue",
+    "value": 12.6
+  },
+  {
+    "timestamp": "2026-02-06T07:25:00",
+    "customer_id": "gamma_ltd",
+    "metric": "orders",
+    "value": 155.67
+  },
+  {
+    "timestamp": "2026-02-06T08:32:00",
+    "customer_id": "delta_co",
+    "metric": "orders",
+    "value": 80.15
+  },
+  {
+    "timestamp": "2026-02-06T09:39:00",
+    "customer_id": "acme_corp",
+    "metric": "orders",
+    "value": 26485.3
+  },
+  {
+    "timestamp": "2026-02-06T10:46:00",
+    "customer_id": "acme_corp",
+    "metric": "revenue",
+    "value": 47.78
+  },
+  {
+    "timestamp": "2026-02-06T11:53:00",
+    "customer_id": "epsilon_llc",
+    "metric": "revenue",
+    "value": 64.32
+  },
+  {
+    "timestamp": "2026-02-07T12:00:00",
+    "customer_id": "gamma_ltd",
+    "metric": "orders",
+    "value": 126.01
+  },
+  {
+    "timestamp": "2026-02-07T13:07:00",
+    "customer_id": "delta_co",
+    "metric": "revenue",
+    "value": 30777.17
+  },
+  {
+    "timestamp": "2026-02-07T14:14:00",
+    "customer_id": "acme_corp",
+    "metric": "orders",
+    "value": 13820.64
+  },
+  {
+    "timestamp": "2026-02-07T15:21:00",
+    "customer_id": "delta_co",
+    "metric": "revenue",
+    "value": 44130.5
+  },
+  {
+    "timestamp": "2026-02-07T16:28:00",
+    "customer_id": "gamma_ltd",
+    "metric": "orders",
+    "value": 40691.23
+  },
+  {
+    "timestamp": "2026-02-07T17:35:00",
+    "customer_id": "delta_co",
+    "metric": "revenue",
+    "value": 46894.9
+  },
+  {
+    "timestamp": "2026-02-07T18:42:00",
+    "customer_id": "epsilon_llc",
+    "metric": "orders",
+    "value": 3668.67
+  },
+  {
+    "timestamp": "2026-02-07T19:49:00",
+    "customer_id": "delta_co",
+    "metric": "revenue",
+    "value": 24.61
+  },
+  {
+    "timestamp": "2026-02-07T20:56:00",
+    "customer_id": "acme_corp",
+    "metric": "orders",
+    "value": 2065.87
+  },
+  {
+    "timestamp": "2026-02-07T21:03:00",
+    "customer_id": "beta_inc",
+    "metric": "revenue",
+    "value": 193.8
+  },
+  {
+    "timestamp": "2026-02-08T22:10:00",
+    "customer_id": "beta_inc",
+    "metric": "revenue",
+    "value": 30940.38
+  },
+  {
+    "timestamp": "2026-02-08T23:17:00",
+    "customer_id": "delta_co",
+    "metric": "revenue",
+    "value": 42706.86
+  },
+  {
+    "timestamp": "2026-02-08T00:24:00",
+    "customer_id": "beta_inc",
+    "metric": "revenue",
+    "value": 26678.94
+  },
+  {
+    "timestamp": "2026-02-08T01:31:00",
+    "customer_id": "beta_inc",
+    "metric": "orders",
+    "value": 1256.16
+  },
+  {
+    "timestamp": "2026-02-08T02:38:00",
+    "customer_id": "beta_inc",
+    "metric": "orders",
+    "value": 19820.19
+  },
+  {
+    "timestamp": "2026-02-08T03:45:00",
+    "customer_id": "gamma_ltd",
+    "metric": "orders",
+    "value": 145.58
+  },
+  {
+    "timestamp": "2026-02-08T04:52:00",
+    "customer_id": "acme_corp",
+    "metric": "orders",
+    "value": 92.35
+  },
+  {
+    "timestamp": "2026-02-08T05:59:00",
+    "customer_id": "beta_inc",
+    "metric": "revenue",
+    "value": 17381.29
+  },
+  {
+    "timestamp": "2026-02-08T06:06:00",
+    "customer_id": "epsilon_llc",
+    "metric": "orders",
+    "value": 15008.9
+  },
+  {
+    "timestamp": "2026-02-08T07:13:00",
+    "customer_id": "acme_corp",
+    "metric": "orders",
+    "value": 4.59
+  },
+  {
+    "timestamp": "2026-02-09T08:20:00",
+    "customer_id": "gamma_ltd",
+    "metric": "revenue",
+    "value": 32.93
+  },
+  {
+    "timestamp": "2026-02-09T09:27:00",
+    "customer_id": "gamma_ltd",
+    "metric": "revenue",
+    "value": 19008.46
+  },
+  {
+    "timestamp": "2026-02-09T10:34:00",
+    "customer_id": "delta_co",
+    "metric": "orders",
+    "value": 10009.84
+  },
+  {
+    "timestamp": "2026-02-09T11:41:00",
+    "customer_id": "acme_corp",
+    "metric": "revenue",
+    "value": 28849.41
+  },
+  {
+    "timestamp": "2026-02-09T12:48:00",
+    "customer_id": "beta_inc",
+    "metric": "revenue",
+    "value": 97.27
+  },
+  {
+    "timestamp": "2026-02-09T13:55:00",
+    "customer_id": "epsilon_llc",
+    "metric": "revenue",
+    "value": 71.58
+  },
+  {
+    "timestamp": "2026-02-09T14:02:00",
+    "customer_id": "acme_corp",
+    "metric": "orders",
+    "value": 11886.07
+  },
+  {
+    "timestamp": "2026-02-09T15:09:00",
+    "customer_id": "delta_co",
+    "metric": "revenue",
+    "value": 4899.06
+  },
+  {
+    "timestamp": "2026-02-09T16:16:00",
+    "customer_id": "beta_inc",
+    "metric": "orders",
+    "value": 170.17
+  },
+  {
+    "timestamp": "2026-02-09T17:23:00",
+    "customer_id": "delta_co",
+    "metric": "orders",
+    "value": 17591.04
+  },
+  {
+    "timestamp": "2026-02-10T18:30:00",
+    "customer_id": "beta_inc",
+    "metric": "revenue",
+    "value": 50.96
+  },
+  {
+    "timestamp": "2026-02-10T19:37:00",
+    "customer_id": "acme_corp",
+    "metric": "revenue",
+    "value": 43999.59
+  },
+  {
+    "timestamp": "2026-02-10T20:44:00",
+    "customer_id": "delta_co",
+    "metric": "revenue",
+    "value": 10737.68
+  },
+  {
+    "timestamp": "2026-02-10T21:51:00",
+    "customer_id": "epsilon_llc",
+    "metric": "revenue",
+    "value": 56.06
+  },
+  {
+    "timestamp": "2026-02-10T22:58:00",
+    "customer_id": "beta_inc",
+    "metric": "orders",
+    "value": 26984.35
+  },
+  {
+    "timestamp": "2026-02-10T23:05:00",
+    "customer_id": "gamma_ltd",
+    "metric": "revenue",
+    "value": 40060.36
+  },
+  {
+    "timestamp": "2026-02-10T00:12:00",
+    "customer_id": "beta_inc",
+    "metric": "revenue",
+    "value": 83.01
+  },
+  {
+    "timestamp": "2026-02-10T01:19:00",
+    "customer_id": "gamma_ltd",
+    "metric": "orders",
+    "value": 27176.78
+  },
+  {
+    "timestamp": "2026-02-10T02:26:00",
+    "customer_id": "acme_corp",
+    "metric": "orders",
+    "value": 27073.47
+  },
+  {
+    "timestamp": "2026-02-10T03:33:00",
+    "customer_id": "gamma_ltd",
+    "metric": "revenue",
+    "value": 154.34
+  },
+  {
+    "timestamp": "2026-02-11T04:40:00",
+    "customer_id": "acme_corp",
+    "metric": "orders",
+    "value": 111.74
+  },
+  {
+    "timestamp": "2026-02-11T05:47:00",
+    "customer_id": "beta_inc",
+    "metric": "revenue",
+    "value": 199.26
+  },
+  {
+    "timestamp": "2026-02-11T06:54:00",
+    "customer_id": "beta_inc",
+    "metric": "orders",
+    "value": 47421.99
+  },
+  {
+    "timestamp": "2026-02-11T07:01:00",
+    "customer_id": "beta_inc",
+    "metric": "orders",
+    "value": 42185.89
+  },
+  {
+    "timestamp": "2026-02-11T08:08:00",
+    "customer_id": "beta_inc",
+    "metric": "orders",
+    "value": 29481.38
+  },
+  {
+    "timestamp": "2026-02-11T09:15:00",
+    "customer_id": "gamma_ltd",
+    "metric": "revenue",
+    "value": 19634.02
+  },
+  {
+    "timestamp": "2026-02-11T10:22:00",
+    "customer_id": "epsilon_llc",
+    "metric": "orders",
+    "value": 3814.08
+  },
+  {
+    "timestamp": "2026-02-11T11:29:00",
+    "customer_id": "gamma_ltd",
+    "metric": "revenue",
+    "value": 192.28
+  },
+  {
+    "timestamp": "2026-02-11T12:36:00",
+    "customer_id": "epsilon_llc",
+    "metric": "revenue",
+    "value": 24727.36
+  },
+  {
+    "timestamp": "2026-02-11T13:43:00",
+    "customer_id": "delta_co",
+    "metric": "orders",
+    "value": 5917.66
+  },
+  {
+    "timestamp": "2026-02-12T14:50:00",
+    "customer_id": "epsilon_llc",
+    "metric": "revenue",
+    "value": 23218.41
+  },
+  {
+    "timestamp": "2026-02-12T15:57:00",
+    "customer_id": "delta_co",
+    "metric": "revenue",
+    "value": 40274.15
+  },
+  {
+    "timestamp": "2026-02-12T16:04:00",
+    "customer_id": "delta_co",
+    "metric": "revenue",
+    "value": 43.34
+  },
+  {
+    "timestamp": "2026-02-12T17:11:00",
+    "customer_id": "gamma_ltd",
+    "metric": "orders",
+    "value": 2418.47
+  },
+  {
+    "timestamp": "2026-02-12T18:18:00",
+    "customer_id": "beta_inc",
+    "metric": "revenue",
+    "value": 27454.51
+  },
+  {
+    "timestamp": "2026-02-12T19:25:00",
+    "customer_id": "beta_inc",
+    "metric": "orders",
+    "value": 33.06
+  },
+  {
+    "timestamp": "2026-02-12T20:32:00",
+    "customer_id": "beta_inc",
+    "metric": "orders",
+    "value": 25884.16
+  },
+  {
+    "timestamp": "2026-02-12T21:39:00",
+    "customer_id": "delta_co",
+    "metric": "orders",
+    "value": 113.42
+  },
+  {
+    "timestamp": "2026-02-12T22:46:00",
+    "customer_id": "epsilon_llc",
+    "metric": "revenue",
+    "value": 99.31
+  },
+  {
+    "timestamp": "2026-02-12T23:53:00",
+    "customer_id": "epsilon_llc",
+    "metric": "revenue",
+    "value": 42786.74
+  },
+  {
+    "timestamp": "2026-02-13T00:00:00",
+    "customer_id": "delta_co",
+    "metric": "revenue",
+    "value": 619.48
+  },
+  {
+    "timestamp": "2026-02-13T01:07:00",
+    "customer_id": "acme_corp",
+    "metric": "revenue",
+    "value": 164.93
+  },
+  {
+    "timestamp": "2026-02-13T02:14:00",
+    "customer_id": "beta_inc",
+    "metric": "orders",
+    "value": 162.8
+  },
+  {
+    "timestamp": "2026-02-13T03:21:00",
+    "customer_id": "acme_corp",
+    "metric": "orders",
+    "value": 35308.96
+  },
+  {
+    "timestamp": "2026-02-13T04:28:00",
+    "customer_id": "beta_inc",
+    "metric": "orders",
+    "value": 70.66
+  },
+  {
+    "timestamp": "2026-02-13T05:35:00",
+    "customer_id": "epsilon_llc",
+    "metric": "orders",
+    "value": 36377.15
+  },
+  {
+    "timestamp": "2026-02-13T06:42:00",
+    "customer_id": "delta_co",
+    "metric": "orders",
+    "value": 27500.41
+  },
+  {
+    "timestamp": "2026-02-13T07:49:00",
+    "customer_id": "delta_co",
+    "metric": "revenue",
+    "value": 53.97
+  },
+  {
+    "timestamp": "2026-02-13T08:56:00",
+    "customer_id": "delta_co",
+    "metric": "orders",
+    "value": 123.52
+  },
+  {
+    "timestamp": "2026-02-13T09:03:00",
+    "customer_id": "gamma_ltd",
+    "metric": "orders",
+    "value": 88.05
+  },
+  {
+    "timestamp": "2026-02-14T10:10:00",
+    "customer_id": "delta_co",
+    "metric": "revenue",
+    "value": 63.43
+  },
+  {
+    "timestamp": "2026-02-14T11:17:00",
+    "customer_id": "beta_inc",
+    "metric": "revenue",
+    "value": 41298.62
+  },
+  {
+    "timestamp": "2026-02-14T12:24:00",
+    "customer_id": "gamma_ltd",
+    "metric": "orders",
+    "value": 178.84
+  },
+  {
+    "timestamp": "2026-02-14T13:31:00",
+    "customer_id": "beta_inc",
+    "metric": "revenue",
+    "value": 188.2
+  },
+  {
+    "timestamp": "2026-02-14T14:38:00",
+    "customer_id": "delta_co",
+    "metric": "revenue",
+    "value": 189.66
+  },
+  {
+    "timestamp": "2026-02-14T15:45:00",
+    "customer_id": "beta_inc",
+    "metric": "orders",
+    "value": 3703.57
+  },
+  {
+    "timestamp": "2026-02-14T16:52:00",
+    "customer_id": "epsilon_llc",
+    "metric": "orders",
+    "value": 19.74
+  },
+  {
+    "timestamp": "2026-02-14T17:59:00",
+    "customer_id": "beta_inc",
+    "metric": "revenue",
+    "value": 69.34
+  },
+  {
+    "timestamp": "2026-02-14T18:06:00",
+    "customer_id": "beta_inc",
+    "metric": "revenue",
+    "value": 42626.0
+  },
+  {
+    "timestamp": "2026-02-14T19:13:00",
+    "customer_id": "delta_co",
+    "metric": "orders",
+    "value": 41989.38
+  },
+  {
+    "timestamp": "2026-02-15T20:20:00",
+    "customer_id": "beta_inc",
+    "metric": "revenue",
+    "value": 46.43
+  },
+  {
+    "timestamp": "2026-02-15T21:27:00",
+    "customer_id": "epsilon_llc",
+    "metric": "revenue",
+    "value": 101.69
+  },
+  {
+    "timestamp": "2026-02-15T22:34:00",
+    "customer_id": "beta_inc",
+    "metric": "orders",
+    "value": 22.54
+  },
+  {
+    "timestamp": "2026-02-15T23:41:00",
+    "customer_id": "delta_co",
+    "metric": "orders",
+    "value": 87.89
+  },
+  {
+    "timestamp": "2026-02-15T00:48:00",
+    "customer_id": "delta_co",
+    "metric": "orders",
+    "value": 13000.38
+  },
+  {
+    "timestamp": "2026-02-15T01:55:00",
+    "customer_id": "delta_co",
+    "metric": "orders",
+    "value": 48478.23
+  },
+  {
+    "timestamp": "2026-02-15T02:02:00",
+    "customer_id": "acme_corp",
+    "metric": "revenue",
+    "value": 14.78
+  },
+  {
+    "timestamp": "2026-02-15T03:09:00",
+    "customer_id": "acme_corp",
+    "metric": "orders",
+    "value": 45178.14
+  },
+  {
+    "timestamp": "2026-02-15T04:16:00",
+    "customer_id": "beta_inc",
+    "metric": "orders",
+    "value": 199.68
+  },
+  {
+    "timestamp": "2026-02-15T05:23:00",
+    "customer_id": "acme_corp",
+    "metric": "orders",
+    "value": 194.56
+  },
+  {
+    "timestamp": "2026-02-16T06:30:00",
+    "customer_id": "acme_corp",
+    "metric": "revenue",
+    "value": 3648.98
+  },
+  {
+    "timestamp": "2026-02-16T07:37:00",
+    "customer_id": "delta_co",
+    "metric": "revenue",
+    "value": 144.96
+  },
+  {
+    "timestamp": "2026-02-16T08:44:00",
+    "customer_id": "epsilon_llc",
+    "metric": "revenue",
+    "value": 158.33
+  },
+  {
+    "timestamp": "2026-02-16T09:51:00",
+    "customer_id": "epsilon_llc",
+    "metric": "revenue",
+    "value": 22.11
+  },
+  {
+    "timestamp": "2026-02-16T10:58:00",
+    "customer_id": "delta_co",
+    "metric": "revenue",
+    "value": 24.76
+  },
+  {
+    "timestamp": "2026-02-16T11:05:00",
+    "customer_id": "delta_co",
+    "metric": "revenue",
+    "value": 109.48
+  },
+  {
+    "timestamp": "2026-02-16T12:12:00",
+    "customer_id": "gamma_ltd",
+    "metric": "revenue",
+    "value": 43537.35
+  },
+  {
+    "timestamp": "2026-02-16T13:19:00",
+    "customer_id": "gamma_ltd",
+    "metric": "revenue",
+    "value": 30558.54
+  },
+  {
+    "timestamp": "2026-02-16T14:26:00",
+    "customer_id": "beta_inc",
+    "metric": "orders",
+    "value": 35091.67
+  },
+  {
+    "timestamp": "2026-02-16T15:33:00",
+    "customer_id": "epsilon_llc",
+    "metric": "orders",
+    "value": 33505.95
+  },
+  {
+    "timestamp": "2026-02-17T16:40:00",
+    "customer_id": "delta_co",
+    "metric": "revenue",
+    "value": 32.7
+  },
+  {
+    "timestamp": "2026-02-17T17:47:00",
+    "customer_id": "epsilon_llc",
+    "metric": "revenue",
+    "value": 33962.28
+  },
+  {
+    "timestamp": "2026-02-17T18:54:00",
+    "customer_id": "gamma_ltd",
+    "metric": "revenue",
+    "value": 32013.23
+  },
+  {
+    "timestamp": "2026-02-17T19:01:00",
+    "customer_id": "gamma_ltd",
+    "metric": "orders",
+    "value": 1760.8
+  },
+  {
+    "timestamp": "2026-02-17T20:08:00",
+    "customer_id": "acme_corp",
+    "metric": "orders",
+    "value": 77.67
+  },
+  {
+    "timestamp": "2026-02-17T21:15:00",
+    "customer_id": "gamma_ltd",
+    "metric": "orders",
+    "value": 199.19
+  },
+  {
+    "timestamp": "2026-02-17T22:22:00",
+    "customer_id": "gamma_ltd",
+    "metric": "revenue",
+    "value": 34700.0
+  },
+  {
+    "timestamp": "2026-02-17T23:29:00",
+    "customer_id": "gamma_ltd",
+    "metric": "revenue",
+    "value": 177.36
+  },
+  {
+    "timestamp": "2026-02-17T00:36:00",
+    "customer_id": "epsilon_llc",
+    "metric": "orders",
+    "value": 26964.24
+  },
+  {
+    "timestamp": "2026-02-17T01:43:00",
+    "customer_id": "acme_corp",
+    "metric": "orders",
+    "value": 86.17
+  },
+  {
+    "timestamp": "2026-02-18T02:50:00",
+    "customer_id": "acme_corp",
+    "metric": "revenue",
+    "value": 60.89
+  },
+  {
+    "timestamp": "2026-02-18T03:57:00",
+    "customer_id": "delta_co",
+    "metric": "revenue",
+    "value": 13133.72
+  },
+  {
+    "timestamp": "2026-02-18T04:04:00",
+    "customer_id": "acme_corp",
+    "metric": "orders",
+    "value": 5843.38
+  },
+  {
+    "timestamp": "2026-02-18T05:11:00",
+    "customer_id": "delta_co",
+    "metric": "revenue",
+    "value": 97.07
+  },
+  {
+    "timestamp": "2026-02-18T06:18:00",
+    "customer_id": "acme_corp",
+    "metric": "revenue",
+    "value": 1.48
+  },
+  {
+    "timestamp": "2026-02-18T07:25:00",
+    "customer_id": "epsilon_llc",
+    "metric": "revenue",
+    "value": 40523.39
+  },
+  {
+    "timestamp": "2026-02-18T08:32:00",
+    "customer_id": "epsilon_llc",
+    "metric": "revenue",
+    "value": 175.26
+  },
+  {
+    "timestamp": "2026-02-18T09:39:00",
+    "customer_id": "beta_inc",
+    "metric": "revenue",
+    "value": 45354.85
+  },
+  {
+    "timestamp": "2026-02-18T10:46:00",
+    "customer_id": "epsilon_llc",
+    "metric": "orders",
+    "value": 164.53
+  },
+  {
+    "timestamp": "2026-02-18T11:53:00",
+    "customer_id": "beta_inc",
+    "metric": "revenue",
+    "value": 121.35
+  },
+  {
+    "timestamp": "2026-02-19T12:00:00",
+    "customer_id": "delta_co",
+    "metric": "orders",
+    "value": 22450.77
+  },
+  {
+    "timestamp": "2026-02-19T13:07:00",
+    "customer_id": "gamma_ltd",
+    "metric": "orders",
+    "value": 13449.27
+  },
+  {
+    "timestamp": "2026-02-19T14:14:00",
+    "customer_id": "epsilon_llc",
+    "metric": "orders",
+    "value": 53.84
+  },
+  {
+    "timestamp": "2026-02-19T15:21:00",
+    "customer_id": "acme_corp",
+    "metric": "orders",
+    "value": 178.9
+  },
+  {
+    "timestamp": "2026-02-19T16:28:00",
+    "customer_id": "acme_corp",
+    "metric": "orders",
+    "value": 90.28
+  },
+  {
+    "timestamp": "2026-02-19T17:35:00",
+    "customer_id": "delta_co",
+    "metric": "orders",
+    "value": 186.84
+  },
+  {
+    "timestamp": "2026-02-19T18:42:00",
+    "customer_id": "beta_inc",
+    "metric": "revenue",
+    "value": 25815.98
+  },
+  {
+    "timestamp": "2026-02-19T19:49:00",
+    "customer_id": "epsilon_llc",
+    "metric": "revenue",
+    "value": 3.77
+  },
+  {
+    "timestamp": "2026-02-19T20:56:00",
+    "customer_id": "gamma_ltd",
+    "metric": "orders",
+    "value": 102.83
+  },
+  {
+    "timestamp": "2026-02-19T21:03:00",
+    "customer_id": "beta_inc",
+    "metric": "orders",
+    "value": 8.8
+  },
+  {
+    "timestamp": "2026-02-20T22:10:00",
+    "customer_id": "acme_corp",
+    "metric": "orders",
+    "value": 188.14
+  },
+  {
+    "timestamp": "2026-02-20T23:17:00",
+    "customer_id": "delta_co",
+    "metric": "orders",
+    "value": 50.91
+  },
+  {
+    "timestamp": "2026-02-20T00:24:00",
+    "customer_id": "beta_inc",
+    "metric": "orders",
+    "value": 41529.78
+  },
+  {
+    "timestamp": "2026-02-20T01:31:00",
+    "customer_id": "delta_co",
+    "metric": "orders",
+    "value": 25.16
+  },
+  {
+    "timestamp": "2026-02-20T02:38:00",
+    "customer_id": "beta_inc",
+    "metric": "orders",
+    "value": 140.13
+  },
+  {
+    "timestamp": "2026-02-20T03:45:00",
+    "customer_id": "delta_co",
+    "metric": "orders",
+    "value": 25557.99
+  },
+  {
+    "timestamp": "2026-02-20T04:52:00",
+    "customer_id": "epsilon_llc",
+    "metric": "revenue",
+    "value": 8221.97
+  },
+  {
+    "timestamp": "2026-02-20T05:59:00",
+    "customer_id": "beta_inc",
+    "metric": "orders",
+    "value": 35.36
+  },
+  {
+    "timestamp": "2026-02-20T06:06:00",
+    "customer_id": "gamma_ltd",
+    "metric": "orders",
+    "value": 69.22
+  },
+  {
+    "timestamp": "2026-02-20T07:13:00",
+    "customer_id": "acme_corp",
+    "metric": "orders",
+    "value": 166.87
   }
 ]
