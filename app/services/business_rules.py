@@ -22,16 +22,19 @@ def apply_rules(data_type: str, raw_data: List[dict], params: dict) -> DataRespo
     """
     if data_type == "crm":
         return _apply_crm_rules(raw_data, params)
-    else:
-        # Default: return all data with metadata
-        return DataResponse(
-            data=raw_data,
-            metadata=Metadata(
-                total_results=len(raw_data),
-                returned_results=len(raw_data),
-                data_freshness="unknown"
-            )
-        )
+    if data_type == "support":
+        return _apply_support_rules(raw_data, params)
+    if data_type == "analytics":
+        return _apply_analytics_rules(raw_data, params)
+    # Default: return all data with metadata
+    return DataResponse(
+        data=raw_data,
+        metadata=Metadata(
+            total_results=len(raw_data),
+            returned_results=len(raw_data),
+            data_freshness="unknown",
+        ),
+    )
 
 
 def _apply_crm_rules(raw_data: List[dict], params: dict) -> DataResponse:
@@ -75,6 +78,55 @@ def _apply_crm_rules(raw_data: List[dict], params: dict) -> DataResponse:
         metadata=Metadata(
             total_results=total_results,
             returned_results=len(filtered_data),
-            data_freshness="2 hours ago"
+            data_freshness="2 hours ago",
+        ),
+    )
+
+
+def _apply_support_rules(raw_data: List[dict], params: dict) -> DataResponse:
+    """Apply support-tickets business rules: sort by created_at DESC, limit default 10."""
+    total_results = len(raw_data)
+    filtered = list(raw_data)
+    filtered.sort(
+        key=lambda x: x.get("created_at") or "",
+        reverse=True,
+    )
+    limit = min(params.get("limit", 10), 50)
+    filtered = filtered[:limit]
+    return DataResponse(
+        data=filtered,
+        metadata=Metadata(
+            total_results=total_results,
+            returned_results=len(filtered),
+            data_freshness="2 hours ago",
+        ),
+    )
+
+
+def _apply_analytics_rules(raw_data: List[dict], params: dict) -> DataResponse:
+    """Apply analytics rules; use voice_optimizer when >5 points."""
+    from app.services.voice_optimizer import summarize_analytics
+
+    total_results = len(raw_data)
+    limit = params.get("limit", 100)
+    filtered = raw_data[:limit]
+    if len(filtered) > 5:
+        summarized = summarize_analytics(filtered)
+        return DataResponse(
+            data=summarized,
+            metadata=Metadata(
+                total_results=total_results,
+                returned_results=len(summarized),
+                data_freshness="2 hours ago",
+                data_type="time-series",
+            ),
         )
+    return DataResponse(
+        data=filtered,
+        metadata=Metadata(
+            total_results=total_results,
+            returned_results=len(filtered),
+            data_freshness="2 hours ago",
+            data_type="time-series",
+        ),
     )

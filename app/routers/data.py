@@ -61,3 +61,31 @@ def get_crm_customers(
     }
     
     return apply_rules("crm", raw_data, params)
+
+
+@router.get("/data/support/tickets", response_model=DataResponse)
+def get_support_tickets(
+    customer_id: Optional[str] = Query(None, description="Filter by customer_id"),
+    status: Optional[str] = Query(None, description="Filter by status: open, closed"),
+    priority: Optional[str] = Query(None, description="Filter by priority: high, low"),
+    limit: int = Query(10, description="Max tickets to return"),
+):
+    connector = SupportConnector()
+    raw_data = connector.get_data(
+        {"customer_id": customer_id, "status": status, "priority": priority}
+    )
+    return apply_rules("support", raw_data, {"limit": limit})
+
+
+@router.get("/data/analytics/metrics", response_model=DataResponse)
+def get_analytics_metrics(
+    customer_id: Optional[str] = Query(None, description="Filter by customer_id"),
+    from_date: Optional[str] = Query(None, alias="from", description="Start date (ISO)"),
+    to_date: Optional[str] = Query(None, alias="to", description="End date (ISO)"),
+    limit: int = Query(100, description="Max data points"),
+):
+    connector = AnalyticsConnector()
+    raw_data = connector.get_data(
+        {"customer_id": customer_id, "from": from_date, "to": to_date, "limit": limit}
+    )
+    return apply_rules("analytics", raw_data, {"limit": limit})

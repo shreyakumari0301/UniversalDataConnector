@@ -234,11 +234,19 @@ If you finish early and want to go further:
 
 Good luck! We're excited to see what you build. 🚀
 
+## Setup
+
+```bash
+python -m venv venv
+# Windows: venv\Scripts\activate  |  Linux/Mac: source venv/bin/activate
+pip install -r requirements.txt
+cp .env.example .env   # optional: edit HOST, PORT, MAX_RESULTS
+```
+
 ## Run locally
 
 ```bash
-pip install -r requirements.txt
-uvicorn app.main:app --reload
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
 ## Docker
@@ -248,3 +256,21 @@ docker-compose up --build
 ```
 
 Visit: http://localhost:8000/docs
+
+## API examples
+
+```bash
+# CRM: top customers (max 10), optional filter by customer_id and period
+curl "http://localhost:8000/data/crm/customers?top=3"
+curl "http://localhost:8000/data/crm/customers?customer_id=acme_corp&period=month"
+
+# Support tickets: filter by customer_id, status, priority
+curl "http://localhost:8000/data/support/tickets?customer_id=acme_corp&status=open"
+curl "http://localhost:8000/data/support/tickets?priority=high&limit=5"
+
+# Analytics: metrics with optional date range and customer filter
+curl "http://localhost:8000/data/analytics/metrics?customer_id=acme_corp&from=2026-02-01&to=2026-02-18"
+
+# Health
+curl "http://localhost:8000/health"
+```
