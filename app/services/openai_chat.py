@@ -15,11 +15,19 @@ from app.services.business_rules import apply_rules
 
 logger = logging.getLogger(__name__)
 
-SYSTEM_MESSAGE = (
-    "You are a helpful voice assistant with access to the company's data. "
-    "When the user asks about customers, support tickets, or analytics, use the provided tools. "
-    "Keep answers concise and suitable for voice (short sentences, key numbers)."
-)
+def _system_message(company_id: Optional[str] = None) -> str:
+    base = (
+        "You are a helpful voice assistant with access to the company's data. "
+        "When the user asks about customers, support tickets, or analytics, use the provided tools. "
+        "Keep answers concise and suitable for voice (short sentences, key numbers)."
+    )
+    if company_id:
+        base += (
+            f" The user is verified for company {company_id} only. "
+            "Only use data for this company. If they ask about another company's data (e.g. beta_inc, gamma_ltd), "
+            f"politely say you can only provide information for their own company ({company_id})."
+        )
+    return base
 
 
 def execute_tool(name: str, arguments: dict, company_id: Optional[str] = None) -> str:
@@ -66,7 +74,7 @@ def run_chat(user_message: str, company_id: Optional[str] = None) -> str:
 
     client = OpenAI(api_key=settings.OPENAI_API_KEY)
     messages = [
-        {"role": "system", "content": SYSTEM_MESSAGE},
+        {"role": "system", "content": _system_message(company_id)},
         {"role": "user", "content": user_message},
     ]
     max_rounds = 5
