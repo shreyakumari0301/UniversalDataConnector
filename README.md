@@ -252,6 +252,16 @@ uvicorn app.main:app --reload
 
 (Optional: `--host 0.0.0.0 --port 8000` for network access.)
 
+### Mock data generators
+
+To regenerate sample data in `data/`:
+
+```bash
+python -m app.utils.mock_data
+```
+
+Creates/overwrites `data/customers.json`, `data/support_tickets.json`, and `data/analytics.json`.
+
 ## Docker
 
 ```bash
