@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
-from app.routers import health, data
+from app.routers import health, data, llm
 from app.utils.logging import configure_logging
 import logging
 
@@ -30,3 +30,4 @@ def global_exception_handler(request: Request, exc: Exception):
 
 app.include_router(health.router)
 app.include_router(data.router)
+app.include_router(llm.router)

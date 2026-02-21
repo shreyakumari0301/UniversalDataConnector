@@ -274,3 +274,45 @@ curl "http://localhost:8000/data/analytics/metrics?customer_id=acme_corp&from=20
 # Health
 curl "http://localhost:8000/health"
 ```
+
+---
+
+## LLM integration (function calling)
+
+The API exposes tool schemas for OpenAI and Anthropic so an LLM can call data endpoints via function/tool use.
+
+### 1. Fetch tool definitions
+
+```bash
+# OpenAI (Chat Completions "tools" parameter)
+curl "http://localhost:8000/llm/tools?format=openai"
+
+# Anthropic (Claude tool definitions)
+curl "http://localhost:8000/llm/tools?format=anthropic"
+```
+
+### 2. Map tool names to API calls
+
+When the LLM returns a tool call (e.g. `get_crm_customers` with `{"top": 3}`), call the corresponding endpoint:
+
+| Tool name              | API call                                      |
+|------------------------|-----------------------------------------------|
+| `get_crm_customers`    | `GET /data/crm/customers?top=3`               |
+| `get_support_tickets`  | `GET /data/support/tickets?status=open`      |
+| `get_analytics_metrics`| `GET /data/analytics/metrics?from=...&to=...`|
+
+Helper: `GET /llm/tools/endpoints` returns this mapping.
+
+### 3. Example flow (OpenAI)
+
+1. Get tools: `GET /llm/tools?format=openai` → use `response.tools` in `chat.completions.create(tools=...)`.
+2. User says: "Who are my top 3 customers by revenue?"
+3. LLM returns a tool call: `get_crm_customers(top=3)`.
+4. Your server calls: `GET {BASE_URL}/data/crm/customers?top=3`.
+5. Pass the JSON response back to the LLM as the tool result; the LLM replies in natural language (e.g. for voice).
+
+### 4. Voice-optimized responses
+
+- **Limit**: CRM and support default to max 10 items; analytics can return a summary when there are many points.
+- **Metadata**: Every response includes `metadata.total_results`, `metadata.returned_results`, and `metadata.data_freshness` so the LLM can say e.g. "Showing 3 of 47 customers; data as of 2 hours ago."
+- **Summaries**: Analytics with many data points return a single summary object (total, avg, trend) suitable for spoken answers.
