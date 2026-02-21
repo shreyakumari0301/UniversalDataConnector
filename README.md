@@ -246,8 +246,11 @@ cp .env.example .env   # optional: edit HOST, PORT, MAX_RESULTS
 ## Run locally
 
 ```bash
-uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+pip install -r requirements.txt
+uvicorn app.main:app --reload
 ```
+
+(Optional: `--host 0.0.0.0 --port 8000` for network access.)
 
 ## Docker
 
@@ -256,6 +259,13 @@ docker-compose up --build
 ```
 
 Visit: http://localhost:8000/docs
+
+### Voice assistant demo (browser, STT + Chat + TTS)
+
+1. Set `OPENAI_API_KEY` in `.env` (required for the chat endpoint).
+2. Start the API: `uvicorn app.main:app --host 0.0.0.0 --port 8000`
+3. Open `demo.html` in Chrome or Edge (or run `python -m http.server 8080` and open http://localhost:8080/demo.html). **Or** run `./start_demo.sh` to start uvicorn + file server and open the demo in your browser.
+4. Click **Speak** and ask in natural language (e.g. “Who are my top 3 customers by revenue?” or “Any open support tickets for acme?”). The page sends your speech as text to **POST /chat**; the backend uses OpenAI with our data as tools and returns a short reply; the browser speaks the reply aloud (TTS). Full loop: **STT → /chat (OpenAI + tools) → TTS**.
 
 ## API examples
 
@@ -273,6 +283,26 @@ curl "http://localhost:8000/data/analytics/metrics?customer_id=acme_corp&from=20
 
 # Health
 curl "http://localhost:8000/health"
+
+# Chat (uses OpenAI + your data as tools; requires OPENAI_API_KEY in .env)
+curl -X POST "http://localhost:8000/chat" -H "Content-Type: application/json" -d "{\"message\": \"Who are my top 3 customers by revenue?\"}"
+```
+
+### Authentication / company selection
+
+Data is scoped by **company (tenant)** so each client only sees their own data.
+
+- **Without API keys (default):** send header **`X-Company-ID`** to choose which company you are. All data (CRM, support, analytics) is filtered by that company.
+  - Example: `X-Company-ID: acme_corp` or `beta_inc`, `gamma_ltd`, `delta_co`, `epsilon_llc`
+  - If omitted, defaults to `acme_corp`.
+- **With API keys:** set in `.env`: `API_KEYS_JSON='{"key_acme":"acme_corp","key_beta":"beta_inc"}'`. Then send **`X-API-Key: key_acme`**; the key maps to the company. Invalid or missing key returns 401.
+
+```bash
+# Scope to beta_inc (no auth)
+curl -H "X-Company-ID: beta_inc" "http://localhost:8000/data/crm/customers?top=3"
+
+# With API key auth (after setting API_KEYS_JSON in .env)
+curl -H "X-API-Key: key_acme" "http://localhost:8000/data/support/tickets?status=open"
 ```
 
 ---

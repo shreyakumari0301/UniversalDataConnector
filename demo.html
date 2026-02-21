@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Voice Chat – Universal Data Connector</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 520px; margin: 2rem auto; padding: 0 1rem; }
+    label { display: block; margin-top: 0.75rem; font-weight: 600; }
+    select, input[type="text"] { width: 100%; max-width: 280px; padding: 0.4rem; margin-top: 0.25rem; }
+    button { font-size: 1.2rem; padding: 0.75rem 1.5rem; cursor: pointer; margin-top: 1rem; }
+    #transcript, #response { margin-top: 1rem; padding: 0.75rem; border-radius: 8px; min-height: 1.5rem; }
+    #transcript { background: #f0f4ff; }
+    #response { background: #e8f5e9; }
+    .error { background: #ffebee; color: #c62828; }
+    .hint { font-size: 0.9rem; color: #555; margin-top: 0.25rem; }
+  </style>
+</head>
+<body>
+  <h1>Voice Chat</h1>
+  <p>Select your company, then click <strong>Speak</strong>. Your speech is sent to <strong>POST /chat</strong>; the assistant uses your company’s data and the reply is spoken aloud (TTS).</p>
+
+  <label for="apiBase">API base URL</label>
+  <input type="text" id="apiBase" value="http://localhost:8000" placeholder="http://localhost:8000" />
+  <p class="hint">Must match where your API is running (use http://localhost:8000 if started with uvicorn or start_demo.sh).</p>
+
+  <label for="company">Company (tenant)</label>
+  <select id="company">
+    <option value="acme_corp">acme_corp</option>
+    <option value="beta_inc">beta_inc</option>
+    <option value="gamma_ltd">gamma_ltd</option>
+    <option value="delta_co">delta_co</option>
+    <option value="epsilon_llc">epsilon_llc</option>
+  </select>
+  <p class="hint">Data returned is scoped to this company (sent as X-Company-ID).</p>
+
+  <label for="apiKey">API key (optional)</label>
+  <input type="text" id="apiKey" value="" placeholder="Leave empty unless API_KEYS_JSON is set in .env" />
+  <p class="hint">If you set API_KEYS_JSON, put your key here (sent as X-API-Key).</p>
+
+  <button onclick="listen()">🎤 Speak</button>
+  <div id="transcript"></div>
+  <div id="response"></div>
+
+  <script>
+    function getApiBase() {
+      const el = document.getElementById('apiBase');
+      return (el && el.value) ? el.value.replace(/\/$/, '') : 'http://localhost:8000';
+    }
+
+    function speak(text) {
+      if (!text) return;
+      const u = new SpeechSynthesisUtterance(text);
+      u.rate = 0.95;
+      speechSynthesis.speak(u);
+    }
+
+    async function listen() {
+      const transcriptEl = document.getElementById('transcript');
+      const responseEl = document.getElementById('response');
+      responseEl.classList.remove('error');
+      responseEl.innerText = 'Listening…';
+
+      const Recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!Recognition) {
+        responseEl.className = 'error';
+        responseEl.innerText = 'Speech recognition not supported. Use Chrome or Edge.';
+        return;
+      }
+
+      const recognition = new Recognition();
+      recognition.lang = 'en-US';
+      recognition.onresult = async (event) => {
+        const text = (event.results[0][0].transcript || '').trim();
+        transcriptEl.innerText = 'You: ' + text;
+        responseEl.innerText = 'Asking assistant…';
+
+        const apiBase = getApiBase();
+        const companyId = (document.getElementById('company') && document.getElementById('company').value) || 'acme_corp';
+        const apiKey = (document.getElementById('apiKey') && document.getElementById('apiKey').value) || '';
+
+        const headers = { 'Content-Type': 'application/json' };
+        headers['X-Company-ID'] = companyId;
+        if (apiKey) headers['X-API-Key'] = apiKey;
+
+        try {
+          const res = await fetch(apiBase + '/chat', {
+            method: 'POST',
+            headers: headers,
+            body: JSON.stringify({ message: text }),
+          });
+          const data = await res.json();
+          if (!res.ok) {
+            responseEl.classList.add('error');
+            responseEl.innerText = Array.isArray(data.detail) ? JSON.stringify(data.detail) : (data.detail || 'Chat request failed.');
+            return;
+          }
+          const reply = (data.reply || '').trim();
+          responseEl.innerText = reply;
+          speak(reply);
+        } catch (err) {
+          responseEl.classList.add('error');
+          responseEl.innerText = 'API error: ' + (err.message || 'Is the backend running at ' + apiBase + '? Set OPENAI_API_KEY in .env for /chat.');
+        }
+      };
+      recognition.onerror = () => {
+        responseEl.classList.add('error');
+        responseEl.innerText = 'Speech error. Try again.';
+      };
+      recognition.start();
+    }
+  </script>
+</body>
+</html>
