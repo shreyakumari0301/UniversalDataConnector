@@ -275,7 +275,8 @@ Visit: http://localhost:8000/docs
 1. Set `OPENAI_API_KEY` in `.env` (required for the chat endpoint).
 2. Start the API: `uvicorn app.main:app --host 0.0.0.0 --port 8000`
 3. Open `demo.html` in Chrome or Edge (or run `python -m http.server 8080` and open http://localhost:8080/demo.html). **Or** run `./start_demo.sh` to start uvicorn + file server and open the demo in your browser.
-4. Click **Speak** and ask in natural language (e.g. “Who are my top 3 customers by revenue?” or “Any open support tickets for acme?”). The page sends your speech as text to **POST /chat**; the backend uses OpenAI with our data as tools and returns a short reply; the browser speaks the reply aloud (TTS). Full loop: **STT → /chat (OpenAI + tools) → TTS**.
+4. Select your **company** (tenant), then **verify**: say or type “I am &lt;name&gt; from &lt;company_id&gt;” (e.g. “I am acme from acme_corp”). Only after verification can you ask questions. Only your company’s data is returned; questions about other companies are refused by the assistant.
+5. Click **Speak** or type a question and click **Ask**. The page sends to **POST /chat**; the reply is spoken aloud (TTS). Full loop: **STT → /chat (OpenAI + tools) → TTS**.
 
 ## API examples
 
