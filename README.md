@@ -264,18 +264,36 @@ Creates/overwrites `data/customers.json`, `data/support_tickets.json`, and `data
 
 ## Docker
 
+**First time (build):**
 ```bash
 docker-compose up --build
 ```
 
-Visit: http://localhost:8000/docs
+**Start again (no rebuild):**
+```bash
+docker-compose up
+```
+This only starts the API; it does **not** open your browser.
+
+**Start and open app + demo in browser (recommended):**
+```bash
+./docker-start.sh
+```
+Starts the stack, waits for the API, opens http://localhost:8000 and http://localhost:8000/demo, then streams logs. Use this when you want the page to open by itself (like `./start_demo.sh` for local runs).
+
+**Open in your browser:** http://localhost:8000 (or http://127.0.0.1:8000). Do **not** use http://0.0.0.0:8000 — that is the bind address; the app will redirect you to localhost if you land on 0.0.0.0.
+
+- Landing: http://localhost:8000/
+- Demo: http://localhost:8000/demo
+- API docs: http://localhost:8000/docs
 
 ### Voice assistant demo (browser, STT + Chat + TTS)
 
 1. Set `OPENAI_API_KEY` in `.env` (required for the chat endpoint).
 2. Start the API: `uvicorn app.main:app --host 0.0.0.0 --port 8000`
 3. Open `demo.html` in Chrome or Edge (or run `python -m http.server 8080` and open http://localhost:8080/demo.html). **Or** run `./start_demo.sh` to start uvicorn + file server and open the demo in your browser.
-4. Click **Speak** and ask in natural language (e.g. “Who are my top 3 customers by revenue?” or “Any open support tickets for acme?”). The page sends your speech as text to **POST /chat**; the backend uses OpenAI with our data as tools and returns a short reply; the browser speaks the reply aloud (TTS). Full loop: **STT → /chat (OpenAI + tools) → TTS**.
+4. Select your **company** (tenant). Data is scoped to that company; questions about other companies are refused. “I am &lt;name&gt; from &lt;company_id&gt;” (e.g. “I am acme from acme_corp”). (Removed.) company’s data is returned; questions about other companies are refused by the assistant.
+5. Click **Speak** or type a question and click **Ask**. The page sends to **POST /chat**; the reply is spoken aloud (TTS). Full loop: **STT → /chat (OpenAI + tools) → TTS**.
 
 ## API examples
 

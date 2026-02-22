@@ -7,27 +7,36 @@ Draw this on a whiteboard or in Excalidraw.
 **High-level flow**
 
 ```
-[User / Voice UI]  →  [Your app or LLM]  →  [This API]  →  [Connectors]  →  [Data files]
-                              ↑                    ↓
-                         Tool schemas          Business rules
-                         (/llm/tools)          + voice optimizer
+[Demo UI: Voice / Ask / Proof-of-work]
+         │
+         ├──► POST /chat (message) ──► [This API]
+         │         │                         │
+         │         │                    OpenAI + tool schemas
+         │         │                         │
+         │         │                    Tool call? → execute_tool()
+         │         │                         │
+         │         │                    Connector + business_rules
+         │         │                         │
+         │         ◄── reply + workflow ◄────┘
+         │
+         └──► Check record: GET /data/crm/customers, /data/support/tickets, /data/analytics/metrics
+                    (direct API – no LLM; verify company has data)
 ```
 
 **Step-by-step (what to label in the diagram)**
 
-1. **User** – Speaks or types a query (e.g. “Top 3 customers”).
-2. **Client / LLM layer** – Gets tool definitions from `GET /llm/tools`, sends user message to OpenAI/Claude with those tools.
-3. **LLM** – Returns a tool call, e.g. `get_crm_customers(top=3)`.
-4. **Client** – Calls **this API**: `GET /data/crm/customers?top=3`.
-5. **This API** – **Router** → **Business rules** (limit, sort, period filter) → **Connector** (CRM/Support/Analytics) → reads **JSON data**.
-6. **Response** – `{ data: [...], metadata: { total_results, returned_results, data_freshness } }` back to client.
-7. **Client** – Passes JSON to LLM; LLM speaks the answer (or your app does TTS).
+1. **User** – Speaks, types a question, or runs a proof-of-work test (demo.html).
+2. **Chat path** – Client sends **POST /chat** with `{ "message": "..." }` and `X-Company-ID`. No client-side tool calls; the API holds tool schemas and runs OpenAI.
+3. **This API** – **Router** → **openai_chat.run_chat** → OpenAI with tools → LLM may return **tool_calls** (e.g. `get_crm_customers`, `get_support_tickets`, `get_analytics_metrics`).
+4. **Server-side tool execution** – For each tool call, API runs **execute_tool** → **Connector** (CRM/Support/Analytics) → **business_rules** (limit, sort, voice optimizer) → JSON result; result is sent back to OpenAI.
+5. **Response** – API returns `{ "reply": "...", "workflow": [ { "tool", "arguments", "result_preview" } ] }`. Demo shows **Expected (raw tool output)**, **From LLM**, and **Workflow (functions called)** as proof of work.
+6. **Check record** – User enters a company ID and clicks Check; demo calls **GET /data/crm/customers**, **GET /data/support/tickets**, **GET /data/analytics/metrics** with that company. Result: “Record found” (counts) or “No data”.
 
-**Three data paths to show**
+**Three data paths (unified behind tools)**
 
-- **CRM**: `customers.json` → CRM connector → business rules (revenue sort, period, max 10) → response.
-- **Support**: `support_tickets.json` → Support connector → business rules (created_at sort, limit) → response.
-- **Analytics**: `analytics.json` → Analytics connector → business rules + voice optimizer (summary if >5 points) → response.
+- **CRM**: `get_crm_customers` → CRM connector → `customers.json` → business rules (revenue sort, period, max 10) → response.
+- **Support**: `get_support_tickets` → Support connector → `support_tickets.json` → business rules (created_at sort, limit) → response.
+- **Analytics**: `get_analytics_metrics` → Analytics connector → `analytics.json` → business rules + voice optimizer (summary if >5 points) → response.
 
 ---
 
@@ -45,16 +54,23 @@ Draw this on a whiteboard or in Excalidraw.
 |--------|--------|-------------|
 | 0:00   | Open http://localhost:8000/docs | “This is the unified API: one place for CRM, support, and analytics.” |
 | 0:15   | `GET /health` → Execute | “Health check; API is up.” |
-| 0:25   | `GET /data/crm/customers` → top=3 → Execute | “Top 3 customers by revenue. Response has data plus metadata: total vs returned, freshness.” |
+| 0:25   | `GET /data/crm/customers` → top=3 → Execute | “Top 3 customers by revenue. Response has data plus metadata.” |
 | 0:45   | `GET /data/support/tickets` → customer_id=acme_corp, status=open → Execute | “Support tickets for one customer, open only. Same response shape.” |
-| 1:05   | `POST /chat` → body `{"message": "Who are my top 3 customers?"}` → Execute | “Chat uses OpenAI with our data as tools; reply is concise for voice.” |
-| 1:25   | Optional: demo.html, click Speak | “Voice assistant: I speak (STT), browser sends to POST /chat, server uses OpenAI + data tools, reply spoken aloud (TTS).” |
+| 1:05   | `POST /chat` → body `{"message": "Who are my top 3 customers?"}` → Execute | “Chat uses OpenAI; tools run **server-side**. Response includes `reply` and `workflow` (proof of work).” |
+| 1:25   | demo.html → **Check record**: enter company ID, Check | “Check if a record is correct: direct GET to the three data endpoints; we see CRM/support/analytics counts for that company.” |
+| 1:40   | demo.html → **Proof of work**: Run test on CRM question | “Expected answer shows raw tool output; From LLM shows the spoken reply; Workflow shows which backend functions were called.” |
+| 2:00   | Optional: demo.html, click Speak | “Voice: STT → POST /chat → server runs OpenAI + tools → reply + workflow → TTS.” |
 
 **Voice assistant (STT + Chat + TTS)**
 
-- **demo.html** in Chrome/Edge: click **Speak**, ask e.g. “Who are my top 3 customers?” or “Any open tickets for acme?”
-- Flow: **Speech recognition (STT)** → transcript to **POST /chat** → backend uses OpenAI + our data tools → short reply → **SpeechSynthesis (TTS)** reads it aloud.
-- Requires `OPENAI_API_KEY` in `.env`. CORS is enabled so the page can call the API.
+- **demo.html** in Chrome/Edge: click **Speak** or type in **Ask**. Question goes to **POST /chat**; backend runs OpenAI + data tools **in-process**; response is `reply` + `workflow`.
+- Flow: **STT** → **POST /chat** → API executes tools (connectors + business_rules) → **reply** + **workflow** → **TTS**.
+- Requires `OPENAI_API_KEY` in `.env`. CORS enabled.
+
+**Check record & proof of work**
+
+- **Check record**: Enter a company ID → demo calls GET /data/crm/customers, /data/support/tickets, /data/analytics/metrics for that company → “Record found” with counts or “No data”.
+- **Proof of work**: Pre-set questions (CRM, Support, Analytics). Run test → POST /chat → UI shows **Expected answer** (raw tool output), **From LLM** (natural language), **Workflow** (functions called: name + arguments).
 
 **One-liner**
 
