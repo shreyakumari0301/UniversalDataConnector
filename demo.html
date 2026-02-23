@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Voice Chat – Universal Data Connector</title>
   <style>
-    body { font-family: system-ui, sans-serif; max-width: 520px; margin: 2rem auto; padding: 0 1rem; }
+    body { font-family: system-ui, sans-serif; max-width: 640px; margin: 2rem auto; padding: 0 1rem; }
     label { display: block; margin-top: 0.75rem; font-weight: 600; }
     select, input[type="text"] { width: 100%; max-width: 280px; padding: 0.4rem; margin-top: 0.25rem; }
     button { font-size: 1.2rem; padding: 0.75rem 1.5rem; cursor: pointer; margin-top: 1rem; }
@@ -13,18 +13,17 @@
     #response { background: #e8f5e9; }
     .error { background: #ffebee; color: #c62828; }
     .hint { font-size: 0.9rem; color: #555; margin-top: 0.25rem; }
-    .flow-diagram { margin: 1.5rem 0; padding: 1rem; background: #fafafa; border-radius: 12px; border: 1px solid #e0e0e0; }
-    .flow-diagram h3 { margin: 0 0 0.75rem 0; font-size: 1rem; color: #333; }
-    .flow-row { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0.5rem; }
-    .flow-box { min-width: 120px; max-width: 200px; padding: 0.75rem; border-radius: 8px; text-align: center; font-size: 0.85rem; word-break: break-word; }
-    .flow-box.query { background: #e3f2fd; border: 2px solid #2196f3; }
-    .flow-box.system { background: #f3e5f5; border: 2px solid #9c27b0; }
-    .flow-box.output { background: #e8f5e9; border: 2px solid #4caf50; }
-    .flow-arrow { font-size: 1.5rem; color: #666; flex-shrink: 0; }
-    .flow-box .label { font-weight: 700; margin-bottom: 0.25rem; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.02em; }
-    .flow-box .value { min-height: 1.2em; }
-    .verify-section { margin-top: 1rem; padding: 0.75rem; background: #fff8e1; border-radius: 8px; border: 1px solid #ffc107; }
-    .verify-section button { margin-top: 0.5rem; }
+    .section { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid #ddd; }
+    .section h2 { font-size: 1.15rem; margin-bottom: 0.5rem; }
+    .box { margin-top: 0.75rem; padding: 0.75rem 1rem; border-radius: 8px; background: #f8f9fa; border: 1px solid #e9ecef; font-size: 0.9rem; white-space: pre-wrap; word-break: break-word; }
+    .box-title { font-weight: 700; font-size: 0.8rem; text-transform: uppercase; color: #495057; margin-bottom: 0.35rem; }
+    .box.expected { background: #e7f1ff; border-color: #b6d4fe; }
+    .box.llm { background: #e8f5e9; border-color: #a5d6a7; }
+    .box.workflow { background: #fff3e0; border-color: #ffcc80; }
+    .workflow-step { margin-bottom: 0.5rem; padding: 0.5rem; background: #fff; border-radius: 4px; font-family: ui-monospace, monospace; font-size: 0.8rem; }
+    .test-card { margin-bottom: 1.25rem; padding: 1rem; border: 1px solid #dee2e6; border-radius: 8px; }
+    .test-card .question { font-weight: 600; margin-bottom: 0.5rem; }
+    .check-result { margin-top: 0.5rem; padding: 0.5rem; border-radius: 6px; font-size: 0.9rem; }
   </style>
 </head>
 <body>
@@ -91,6 +90,50 @@
   </div>
   <div id="transcript"></div>
   <div id="response"></div>
+
+  <section class="section" id="checkRecordSection">
+    <h2>Check if a record is correct</h2>
+    <p class="hint">Enter a company ID to verify that the API returns data for that company (direct API query).</p>
+    <label for="checkCompanyId">Company ID to check</label>
+    <input type="text" id="checkCompanyId" placeholder="e.g. acme_corp" style="width:100%; max-width:200px;" />
+    <button type="button" onclick="checkRecord()">Check</button>
+    <div id="checkRecordResult" class="check-result" style="display:none;"></div>
+  </section>
+
+  <section class="section" id="proofOfWorkSection">
+    <h2>Proof of work – test the unified system</h2>
+    <p class="hint">Run these test questions to see: <strong>Expected answer</strong> (raw data from direct API), <strong>From LLM</strong> (natural language reply), and <strong>Workflow</strong> (which backend functions were called).</p>
+
+    <div class="test-card" data-question="Who are my top 3 customers by revenue?" data-type="CRM">
+      <div class="question">CRM: Who are my top 3 customers by revenue?</div>
+      <button type="button" onclick="runTest(this)">Run test</button>
+      <div class="test-output" style="display:none;">
+        <div class="box expected"><span class="box-title">Expected answer (direct API / raw tool output)</span><pre id="out1-expected"></pre></div>
+        <div class="box llm"><span class="box-title">From LLM</span><pre id="out1-llm"></pre></div>
+        <div class="box workflow"><span class="box-title">Workflow (functions called)</span><div id="out1-workflow"></div></div>
+      </div>
+    </div>
+
+    <div class="test-card" data-question="What are my open high-priority support tickets?" data-type="Support">
+      <div class="question">Support: What are my open high-priority support tickets?</div>
+      <button type="button" onclick="runTest(this)">Run test</button>
+      <div class="test-output" style="display:none;">
+        <div class="box expected"><span class="box-title">Expected answer (direct API / raw tool output)</span><pre id="out2-expected"></pre></div>
+        <div class="box llm"><span class="box-title">From LLM</span><pre id="out2-llm"></pre></div>
+        <div class="box workflow"><span class="box-title">Workflow (functions called)</span><div id="out2-workflow"></div></div>
+      </div>
+    </div>
+
+    <div class="test-card" data-question="Give me a summary of our analytics metrics for this month." data-type="Analytics">
+      <div class="question">Analytics: Give me a summary of our analytics metrics for this month.</div>
+      <button type="button" onclick="runTest(this)">Run test</button>
+      <div class="test-output" style="display:none;">
+        <div class="box expected"><span class="box-title">Expected answer (direct API / raw tool output)</span><pre id="out3-expected"></pre></div>
+        <div class="box llm"><span class="box-title">From LLM</span><pre id="out3-llm"></pre></div>
+        <div class="box workflow"><span class="box-title">Workflow (functions called)</span><div id="out3-workflow"></div></div>
+      </div>
+    </div>
+  </section>
 
   <script>
     var verified = false;
@@ -279,7 +322,7 @@
 
       const Recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
       if (!Recognition) {
-        responseEl.className = 'error';
+        responseEl.classList.add('error');
         responseEl.innerText = 'Speech recognition not supported. Use Chrome or Edge.';
         return;
       }
@@ -318,6 +361,91 @@
         responseEl.innerText = tip;
       };
       recognition.start();
+    }
+
+    function getHeaders() {
+      const companyId = getCompanyId();
+      const apiKey = (document.getElementById('apiKey') && document.getElementById('apiKey').value) || '';
+      const h = { 'Content-Type': 'application/json', 'X-Company-ID': companyId };
+      if (apiKey) h['X-API-Key'] = apiKey;
+      return h;
+    }
+
+    async function checkRecord() {
+      const companyId = (document.getElementById('checkCompanyId') && document.getElementById('checkCompanyId').value.trim()) || getCompanyId();
+      const resultEl = document.getElementById('checkRecordResult');
+      resultEl.style.display = 'block';
+      resultEl.className = 'check-result';
+      resultEl.innerHTML = 'Checking…';
+      const apiBase = getApiBase();
+      const headers = { 'X-Company-ID': companyId };
+      const apiKey = (document.getElementById('apiKey') && document.getElementById('apiKey').value) || '';
+      if (apiKey) headers['X-API-Key'] = apiKey;
+      try {
+        const [crm, support, analytics] = await Promise.all([
+          fetch(apiBase + '/data/crm/customers?top=5', { headers }).then(r => r.json()),
+          fetch(apiBase + '/data/support/tickets?limit=5', { headers }).then(r => r.json()),
+          fetch(apiBase + '/data/analytics/metrics?limit=5', { headers }).then(r => r.json()),
+        ]);
+        const nc = (crm.data || []).length;
+        const ns = (support.data || []).length;
+        const na = (analytics.data || []).length;
+        const ok = nc > 0 || ns > 0 || na > 0;
+        resultEl.textContent = ok
+          ? 'Record found. CRM: ' + nc + ' customer(s), Support: ' + ns + ' ticket(s), Analytics: ' + na + ' point(s) for company \"' + companyId + '\".'
+          : 'No data for company \"' + companyId + '\". Record not present or incorrect.';
+        resultEl.style.background = ok ? '#e8f5e9' : '#fff3e0';
+      } catch (err) {
+        resultEl.className = 'check-result error';
+        resultEl.textContent = 'Error: ' + (err.message || 'Could not reach API.');
+      }
+    }
+
+    async function runTest(btn) {
+      const card = btn.closest('.test-card');
+      const question = card.getAttribute('data-question');
+      const type = card.getAttribute('data-type');
+      const output = card.querySelector('.test-output');
+      const ids = { 'CRM': '1', 'Support': '2', 'Analytics': '3' };
+      const id = ids[type] || '1';
+      const expectedEl = document.getElementById('out' + id + '-expected');
+      const llmEl = document.getElementById('out' + id + '-llm');
+      const workflowEl = document.getElementById('out' + id + '-workflow');
+      if (!expectedEl || !llmEl || !workflowEl) return;
+      expectedEl.textContent = '…';
+      llmEl.textContent = '…';
+      workflowEl.innerHTML = '…';
+      output.style.display = 'block';
+      btn.disabled = true;
+      const apiBase = getApiBase();
+      try {
+        const res = await fetch(apiBase + '/chat', {
+          method: 'POST',
+          headers: getHeaders(),
+          body: JSON.stringify({ message: question }),
+        });
+        const data = await res.json();
+        if (!res.ok) {
+          llmEl.textContent = 'Error: ' + (data.detail || res.statusText);
+          workflowEl.innerHTML = '';
+          return;
+        }
+        llmEl.textContent = (data.reply || '').trim();
+        const workflow = data.workflow || [];
+        if (workflow.length) {
+          expectedEl.textContent = workflow.map(function (w) { return w.result_preview || ''; }).join('\n\n---\n\n');
+          workflowEl.innerHTML = workflow.map(function (w) {
+            return '<div class="workflow-step"><strong>' + (w.tool || '') + '</strong> ' + JSON.stringify(w.arguments || {}) + '</div>';
+          }).join('');
+        } else {
+          expectedEl.textContent = '(No tool calls – LLM answered without calling data APIs.)';
+          workflowEl.innerHTML = '(No backend functions called.)';
+        }
+      } catch (err) {
+        llmEl.textContent = 'API error: ' + (err.message || '');
+        workflowEl.innerHTML = '';
+      }
+      btn.disabled = false;
     }
   </script>
 </body>

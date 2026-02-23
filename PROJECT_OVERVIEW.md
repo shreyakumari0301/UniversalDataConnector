@@ -323,10 +323,4 @@ flowchart LR
 
 ---
 
-## 3. How to View the Flowcharts
-
-- **GitHub:** Paste the Mermaid blocks into a `.md` file and view the repo on GitHub (native Mermaid support).
-- **Online:** Go to [https://mermaid.live](https://mermaid.live), paste a diagram, and export as PNG/SVG.
-- **VS Code:** Install a “Mermaid” extension to preview the diagrams in the editor.
-
 This document and the flowcharts give a detailed overview of what was implemented and how the pieces connect end to end.

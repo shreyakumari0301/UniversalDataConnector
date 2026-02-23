@@ -4,7 +4,9 @@ Executes tool calls in-process (connectors + business_rules).
 """
 import json
 import logging
-from typing import Any, Optional
+from typing import Any, List, Optional, Tuple
+
+WORKFLOW_PREVIEW_MAX = 400
 
 from app.config import settings
 from app.schemas.llm_tools import OPENAI_TOOLS
@@ -62,10 +64,10 @@ def execute_tool(name: str, arguments: dict, company_id: Optional[str] = None) -
         return json.dumps({"error": str(e)})
 
 
-def run_chat(user_message: str, company_id: Optional[str] = None) -> str:
+def run_chat(user_message: str, company_id: Optional[str] = None) -> Tuple[str, List[dict]]:
     """
     Send user message to OpenAI with our tools; execute any tool calls and loop until done.
-    Returns the final assistant reply text.
+    Returns (final assistant reply text, workflow steps for proof of work).
     """
     if not settings.OPENAI_API_KEY:
         raise ValueError("OPENAI_API_KEY is not set in .env")
@@ -77,6 +79,7 @@ def run_chat(user_message: str, company_id: Optional[str] = None) -> str:
         {"role": "system", "content": _system_message(company_id)},
         {"role": "user", "content": user_message},
     ]
+    workflow: List[dict] = []
     max_rounds = 5
     for _ in range(max_rounds):
         resp = client.chat.completions.create(
@@ -88,7 +91,7 @@ def run_chat(user_message: str, company_id: Optional[str] = None) -> str:
         choice = resp.choices[0]
         msg = choice.message
         if not msg.tool_calls:
-            return (msg.content or "").strip()
+            return ((msg.content or "").strip(), workflow)
         messages.append({"role": "assistant", "content": msg.content or "", "tool_calls": [{"id": tc.id, "type": "function", "function": {"name": tc.function.name, "arguments": tc.function.arguments}} for tc in msg.tool_calls]})
         for tc in msg.tool_calls:
             name = tc.function.name
@@ -97,5 +100,7 @@ def run_chat(user_message: str, company_id: Optional[str] = None) -> str:
             except json.JSONDecodeError:
                 arguments = {}
             result = execute_tool(name, arguments, company_id=company_id)
+            preview = result[:WORKFLOW_PREVIEW_MAX] + ("..." if len(result) > WORKFLOW_PREVIEW_MAX else "")
+            workflow.append({"tool": name, "arguments": arguments, "result_preview": preview})
             messages.append({"role": "tool", "tool_call_id": tc.id, "content": result})
-    return "I hit the reply limit. Please try a shorter question."
+    return ("I hit the reply limit. Please try a shorter question.", workflow)
